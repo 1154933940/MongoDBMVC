@@ -1,0 +1,98 @@
+﻿@model ModUApiPowerAplictionFind
+@using CivetHR.UserAPI
+@using PDSS.MVC.Utility
+@{
+    Layout = null;
+}
+<link href="~/Content/CivetPublicSaaSSys-01.base.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<link href="~/Content/CivetPublicSaaSSys-02.home.css" rel="stylesheet" />
+<div class="row" style="padding: 20px 25px 20px 25px; position: relative;">
+    @using (Html.BeginForm("UpdateInfoSave", "InterfaceApply", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="hidden" value="@Model._id" name="id" />
+        <br />
+        <fieldset>
+            <legend>@Html.Lang("基本资料")</legend>
+            <br />
+            <table style="width: 100%" border="1" class="normal_table" cellpadding="0" cellspacing="">
+                <tr>
+                    <td>@Html.Lang("频道账号")</td>
+                    <td>
+                        @Html.EditorFor(model => model.serviceno_uid)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("负责人工号")</td>
+                    <td>
+                        @Html.EditorFor(model => model.civetno)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("负责人姓名")</td>
+                    <td>
+                        @Html.EditorFor(model => model.user_name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("负责人手机")</td>
+                    <td>
+                        @Html.EditorFor(model => model.mobile)
+                        @Html.ValidationMessageFor(model => model.mobile)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("负责人分机")</td>
+                    <td>
+                        @Html.EditorFor(model => model.ext_phone)
+                        @Html.ValidationMessageFor(model => model.ext_phone)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("事业群")</td>
+                    <td>
+                        @Html.EditorFor(model => model.bg_name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("事业处")</td>
+                    <td>
+                        @Html.EditorFor(model => model.bu_name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("部门")</td>
+                    <td>
+                        @Html.EditorFor(model => model.dept_name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("费用代码")</td>
+                    <td>
+                        @Html.EditorFor(model => model.cost_code)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("备注")</td>
+                    <td>
+                        @Html.TextAreaFor(m => m.apply_reason, new { @style = "height:50px" })
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br />
+        <div style="width: 100%; text-align: center">
+            <input type="submit" class="btn-m" id="btnsubmit" value="@Html.Lang("修改")" />
+            <a class="btn-m" id="colse_dialog">关闭</a>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $("#colse_dialog").click(function () {
+        window.parent._close_dialog();
+    })
+</script>
+

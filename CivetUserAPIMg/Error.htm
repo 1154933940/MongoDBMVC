@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>香信·Civet 生活频道</title>
+</head>
+<body>
+    <div style="width:750px; margin:0px auto; font-size: 12px;">
+    <div style="width: 398px; float: left;">
+    <img src="http://civetinterface.foxconn.com/Content/images/CivetAd.gif" />
+    </div>
+    <div style="width: 350px; float: left; padding-top: 50px;">
+        <h1 style="font-size: 20px;color: Blue;">系统发生异常</h1>
+
+        <div style="font-size: 14px;padding:5px;">系统发生未知错误，错误号：<span style="color:Red;" id="code"> </span></div>
+
+        <br />
+
+        <input type="button" value="返回" style="background-color: #000080; color: #FFFFFF; font-size: 14px; border: 1px solid #000080; padding: 6px 20px;" onclick="javascript:history.go(-1);" />
+    </div>   
+    </div>
+    <div style="text-align:center; clear: both; padding-top: 40px;">
+     Copyright&nbsp;&copy;&nbsp;2002- 2014 &nbsp;&nbsp;Foxconn  Software  Company(NJ).  All   Rights   Reserved
+    </div>
+    <script language="javascript">
+        var regexp = /^[\s\S]+code\=([0-9]+)[\s\S]*$/ig
+        document.getElementById("code").innerText = window.self.location.href.replace(regexp, "$1");
+    </script>
+</body>
+</html>

@@ -1,0 +1,4011 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PDSS.MVC.Utility</name>
+    </assembly>
+    <members>
+        <member name="M:PDSS.MVC.Utility.ByteUtil.Serialize(System.Object)">
+            <summary>
+            将对象序列化成byte[]
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ByteUtil.Deserialize(System.Byte[])">
+            <summary>
+            将byte[]或base64String反序列化
+            </summary>
+            <param name="bt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ByteUtil.Deserialize(System.String)">
+            <summary>
+            将byte[]或base64String反序列化
+            </summary>
+            <param name="bt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ByteUtil.SerializeStr(System.Object)">
+            <summary>
+            将对象序列化成Base64String
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ChineseUtil.LCMapString(System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            使用OS的kernel.dll做为简繁转换工具，只要有装就可以使用，不用额外引用dll，但只能做逐字转换，无法进行词意的转换
+            <para>所以无法将电脑转成计算机</para>
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ChineseUtil.ToSimplified(System.String)">
+            <summary>
+            繁体转简体
+            </summary>
+            <param name="pSource">要转换的繁体字体</param>
+            <returns>转换後的简体字体</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ChineseUtil.ToTraditional(System.String)">
+            <summary>
+            简体转繁体
+            </summary>
+            <param name="pSource">要转换的繁体字体</param>
+            <returns>转换後的简体字体</returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.CloneUtil">
+            <summary>
+            代碼深度復制
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CloneUtil.CopyOjbect``1(``0,``0)">
+            <summary>
+            对象拷贝
+            </summary>
+            <param name="obj">被复制对象</param>
+            <returns>新对象</returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ConfuseUtil">
+            <summary>
+            文件淆碼
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ConfuseUtil.CanEncodeChar">
+            <summary>
+            可淆碼字符
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ConfuseUtil.EncodeByChar(System.String,System.Char)">
+            <summary>
+            將數據每個可淆碼字符進行淆碼
+            </summary>
+            <param name="strOriginal">The string original.</param>
+            <param name="k">The k.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ConfuseUtil.DecodeByChar(System.String,System.Char)">
+            <summary>
+            將淆碼後字符解碼
+            </summary>
+            <param name="strOriginal">The string original.</param>
+            <param name="k">The k.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ConfuseUtil.GetTimestampInYear(System.DateTime)">
+            <summary>
+            一個刻度為2秒，以每年1月1號為起點的時間截
+            </summary>
+            <param name="Time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ConfuseUtil.GetSeconds(System.String)">
+            <summary>
+            獲得特定時間截表示的秒數
+            </summary>
+            <param name="strTimestampInYear">The string timestamp in year.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ConfuseUtil.DateTimeDiff(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            時間相差的秒數（精確至2秒）
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ConfuseUtil.TimestampInYear">
+            <summary>
+            一個刻度為2秒，以每年1月1號為起點的時間截
+            </summary>
+            <value>一個刻度為2秒，以每年1月1號為起點的時間截</value>
+        </member>
+        <member name="T:PDSS.MVC.Utility.JsonConverter">
+            <summary>
+            Json序列化与反序列化
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.JsonConverter.jsonSerialize">
+            <summary>
+            序列化操作对像
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonConverter.Serializer(System.Object,System.Boolean)">
+            <summary>
+            JSON序列化
+            </summary>
+            <param name="obj"></param>
+            <param name="clear">清除为null的项</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonConverter.RemoveNull(System.String)">
+            <summary>
+            Removes the null.
+            </summary>
+            <param name="json">The json.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonConverter.SerializerAs``1(System.Object,System.Boolean)">
+            <summary>
+            JSON按类型序列化
+            </summary>
+            <param name="obj"></param>
+            <param name="clear">清除为null的项</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonConverter.Deserialize``1(System.String)">
+            <summary>
+            JSON反序列化 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.EncryptUtil">
+            <summary>
+            加解密类
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.EncryptUtil._encryptKey">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="inputString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="inputString"></param>
+            <param name="encryptKey"></param>
+            <returns></returns>
+        </member>
+        <member name="F:PDSS.MVC.Utility.EncryptUtil._CivetKey">
+            <summary>
+            香信Key
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.IntiCivetKey(System.String)">
+            <summary>
+            初始化香信Key
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.DesEncrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="pToEncrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.DesDecrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="pToDecrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.UrlDesEncrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            DES加密(For URL)
+            </summary>
+            <param name="pToEncrypt">The p to encrypt.</param>
+            <param name="sKey">The s key.</param>
+            <param name="encoding">The encoding.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.UrlDesDecrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            DES解密(For URL)
+            </summary>
+            <param name="pToDecrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.DesByteEncrypt(System.String,System.String)">
+            <summary>
+            加密方法
+            </summary>
+            <param name="pToEncrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.EncryptUtil.DesByteDecrypt(System.String,System.String)">
+            <summary>
+            解密方法
+            </summary>
+            <param name="pToDecrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelColor">
+            <summary>
+            颜色
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelColor.#ctor(System.Int16)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="Value"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelColor.op_Equality(PDSS.MVC.Utility.ExcelColor,PDSS.MVC.Utility.ExcelColor)">
+            <summary>
+            重写等于运算
+            </summary>
+            <param name="IntVectorA"></param>
+            <param name="IntVectorB"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelColor.op_Inequality(PDSS.MVC.Utility.ExcelColor,PDSS.MVC.Utility.ExcelColor)">
+            <summary>
+            重写等于运算
+            </summary>
+            <param name="IntVectorA"></param>
+            <param name="IntVectorB"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelHeader">
+            <summary>
+            Excel单行表头
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelHeader.Set(System.String[],System.String[])">
+            <summary>
+            设定值
+            </summary>
+            <param name="Labels">表头标签名称</param>
+            <param name="FiledNamesAndFormats">表格列对应的字段名及格式(用|隔开，但不建议使用。)</param>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelHeader._defaultLabels">
+            <summary>
+            预设定表头显示内容
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelHeader.TryUseDefaultLabels">
+            <summary>
+            使用预设定表头显示内容
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelHeader.DefaultLabels">
+            <summary>
+            预设定表头显示内容
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelHeaderItem">
+            <summary>
+            Excel单行表头(一项)
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelHeaderItem.Label">
+            <summary>
+            显示标签
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelHeaderItem.FiledName">
+            <summary>
+            绑定字段
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelHeaderItem.FiledFormat">
+            <summary>
+            字段显示格式
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelArea">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.Create(PDSS.MVC.Utility.ExcelPostion,PDSS.MVC.Utility.ExcelPostion)">
+            <summary>
+            获得一个实例
+            </summary>
+            <param name="StartPos"></param>
+            <param name="EndPos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.CreateRow(PDSS.MVC.Utility.ExcelPostion,System.Int32)">
+            <summary>
+            获得一行区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.CreateRow(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获得一行区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.CreateColumn(PDSS.MVC.Utility.ExcelPostion,System.Int32)">
+            <summary>
+            获得一列区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.CreateColumn(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获得一行区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetAllRowHeight(System.Int32)">
+            <summary>
+            设置行高
+            </summary>
+            <param name="rowIndex"></param>
+            <param name="pos"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetAllColumnWidth(System.Int32)">
+            <summary>
+            设置列宽
+            </summary>
+            <param name="startRow"></param>
+            <param name="endRow"></param>
+            <param name="heightRow"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.CloneStyle(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Clone样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+            <param name="CloneStyleFont"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetRowStyle(System.Int32,NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="VAlign"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetRowStyle(System.Int32,NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="Align"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetRowStyle(System.Int32,PDSS.MVC.Utility.ExcelColor)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="FontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetRowStyle(System.Int32,System.Boolean)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="IsBold"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetRowStyle(System.Int32,System.String,System.Int32,System.Boolean)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="FontName"></param>
+            <param name="FontSize">字号</param>
+            <param name="IsItalic">斜体</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetColumnStyle(System.Int32,NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="ColumnIndex"></param>
+            <param name="Align"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetColumnStyle(System.Int32,NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="ColumnIndex"></param>
+            <param name="VAlign"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetColumnStyle(System.Int32,PDSS.MVC.Utility.ExcelColor)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="ColumnIndex"></param>
+            <param name="FontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetColumnBold(System.Int32,System.Boolean)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="ColumnIndex"></param>
+            <param name="IsBold"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.SetColumnStyle(System.Int32,System.String,System.Int32,System.Boolean)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="ColumnIndex"></param>
+            <param name="FontName"></param>
+            <param name="FontSize">字号</param>
+            <param name="IsItalic">斜体</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelArea.AutoSizeColumn">
+            <summary>
+            自动调整宽度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.NpoiExcelArea">
+            <summary>
+            Excel单元格默认样式类 (私有)
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelArea.#ctor(PDSS.MVC.Utility.ExcelNpoiBase,PDSS.MVC.Utility.ExcelPostion,PDSS.MVC.Utility.ExcelPostion)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelArea.Create(PDSS.MVC.Utility.ExcelPostion,PDSS.MVC.Utility.ExcelPostion)">
+            <summary>
+            获得一个实例
+            </summary>
+            <param name="StartPos"></param>
+            <param name="EndPos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelArea.CreateRow(PDSS.MVC.Utility.ExcelPostion,System.Int32)">
+            <summary>
+            获得一行区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelArea.CreateRow(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获得一行区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelArea.CreateColumn(PDSS.MVC.Utility.ExcelPostion,System.Int32)">
+            <summary>
+            获得一列区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelArea.CreateColumn(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获得一行区域
+            </summary>
+            <param name="StartPos"></param>
+            <param name="ColumnCount"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelNpoiUtil">
+            <summary>
+            NpoiUtil自动导出数据方法
+            </summary>
+            <summary>
+            NPOI操作一个文件Excel
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelNpoiDataDeal">
+            <summary>
+            Npoi基本方法
+            处理List和DataTable数据
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelNpoiBase">
+            <summary>
+            Npoi最基本方法
+            包括：操作WorkBook、Sheet、Cell、CellStyle对像等
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelNpoiBase.CellStyleFamilys">
+            <summary>
+            样式变种记录
+            key为：主样式ID-样式格式，如样式ID为“5”,显示格式要求为“0.00%”则Key为“5-0.00%”
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.#ctor(PDSS.MVC.Utility.ExcelVersion,System.String)">
+            <summary>
+            构造方法(根据Excel版本构造)
+            </summary>
+            <param name="version">Excel版本</param>
+            <param name="SheetName">工作页</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.#ctor(System.String)">
+            <summary>
+            构造方法（按模板路径构造）
+            </summary>
+            <param name="NormlFilePath">模板路径</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.GetRow(System.Int32,System.Boolean)">
+            <summary>
+            获得一行
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ForceCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.GetCell(PDSS.MVC.Utility.ExcelPostion,System.Boolean)">
+            <summary>
+            获得(或创建)一单元格
+            </summary>
+            <param name="Postion">位置</param>
+            <param name="ForceCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.GetCell(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            获得(或创建)一单元格
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+            <param name="ForceCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.GetCell(NPOI.SS.UserModel.IRow,System.Int32,System.Boolean)">
+            <summary>
+            获得(或创建)一单元格
+            </summary>
+            <param name="Row"></param>
+            <param name="ColumnIndex"></param>
+            <param name="ForceCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.SetRowHeight(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            设置行高
+            </summary>
+            <param name="startRow"></param>
+            <param name="endRow"></param>
+            <param name="heightValue"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.SetRowHeight(System.Int32,System.Int32)">
+            <summary>
+            设置行高
+            </summary>
+            <param name="rowIndex"></param>
+            <param name="heightValue"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.SetColumnWidth(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            设置列宽
+            </summary>
+            <param name="startCol"></param>
+            <param name="endCol"></param>
+            <param name="WidthValue"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.SetColumnWidth(System.Int32,System.Int32)">
+            <summary>
+            设置列宽
+            </summary>
+            <param name="ColumnIndex"></param>
+            <param name="WidthValue"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.SaveAs(System.String)">
+            <summary>
+            保存文件
+            </summary>
+            <param name="PathName">文件路径</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.Download(System.String,System.String,System.Boolean)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="PathName"></param>
+            <param name="fileName"></param>
+            <param name="isSave"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiBase.Download(System.String,System.Boolean)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="FullFileName">保存或暂存服务器的路径</param>
+            <param name="IsSave"></param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiBase._sheet">
+            <summary>
+            当前Sheet页Base对像
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiBase._defaultCellStyle">
+            <summary>
+            当前Sheet页基本样式
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiBase.Sheet">
+            <summary>
+            当前Sheet页对像
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiBase.DefaultCellStyle">
+            <summary>
+            当前Sheet页基本样式
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiBase.AreaManager">
+            <summary>
+            单元格区域管理
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiDataDeal.#ctor(PDSS.MVC.Utility.ExcelVersion,System.String)">
+            <summary>
+            构造方法(根据Excel版本构造)
+            </summary>
+            <param name="version">Excel版本</param>
+            <param name="SheetName">工作页名称</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiDataDeal.#ctor(System.String)">
+            <summary>
+            构造方法（按模板路径构造）
+            </summary>
+            <param name="NormlFilePath">模板路径</param>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelNpoiDataDeal._FillStartPos">
+            <summary>
+            填充数据开始时间
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelNpoiDataDeal._FillEndPos">
+            <summary>
+            填充数据结束时间
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelNpoiDataDeal._FillDataArea">
+            <summary>
+            填充数据区域不包括表头
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiDataDeal.FillDataTable(System.Data.DataTable,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            按模板加载数据
+            </summary>
+            <param name="Data">需要加载的数据集</param>
+            <param name="StartRowIndex">加载的起始RowIndex</param>
+            <param name="StartColumnIndex">加载的起始ColumnIndex</param>
+            <param name="Transpose">数据转置(即行列数据位置对换)</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiDataDeal.FillListData``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            导出模型List
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Data"></param>
+            <param name="StartRowIndex"></param>
+            <param name="StartColumnIndex"></param>
+            <param name="Transpose"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiDataDeal.FillModelData``1(``0,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            导出模型数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Data"></param>
+            <param name="StartRowIndex"></param>
+            <param name="StartColumnIndex"></param>
+            <param name="Transpose"></param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiDataDeal.Header">
+            <summary>
+            表头(过滤条件及顺序)
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelNpoiDataDeal.FillDataArea">
+            <summary>
+            填充数据区域不包括表头
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.#ctor(PDSS.MVC.Utility.ExcelVersion,System.String)">
+            <summary>
+            构造方法(根据Excel版本构造)
+            </summary>
+            <param name="version">Excel版本</param>
+            <param name="SheetName">工作页名称</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.#ctor(System.String)">
+            <summary>
+            构造方法（按模板路径构造）
+            </summary>
+            <param name="NormlFilePath">模板路径</param>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelNpoiUtil.AutoFillStartPos">
+            <summary>
+            自动填充数据开始位置
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelNpoiUtil.CreateDefaultTableHeader">
+            <summary>
+            创建表头的方法
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.CreateTableHeader(PDSS.MVC.Utility.ExcelNpoiUtil)">
+            <summary>
+            创建表头的默认方法
+            </summary>
+            <param name="Sender"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.AutoFill(System.Data.DataTable)">
+            <summary>
+            自动将数据集写Excel
+            </summary>
+            <param name="Data"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.AutoFill``1(System.Collections.Generic.List{``0})">
+            <summary>
+            自动将数据集写Excel
+            </summary>
+            <param name="Data"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExcelToDataTable(System.String,System.Int32)">
+            <summary>
+            把sheetIndex表数据，转换为DataTable
+            </summary>
+            <param name="sheetIndex">第几个Sheet，从0开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExportToDataTable(NPOI.SS.UserModel.ISheet)">
+            <summary>
+            把Sheet中的数据转换为DataTable
+            </summary>
+            <param name="sheet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExportExcel``1(System.Collections.Generic.List{``0},System.String[],System.String[],System.String,System.Boolean)">
+            <summary>
+            导出模型数据集
+            </summary>
+            <typeparam name="T">model類型</typeparam>
+            <param name="modelList">要匯出的Model集</param>
+            <param name="Labels">显示表头名称</param>
+            <param name="FiledNamesAndFormats">表格列对应的字段名及格式</param>
+            <param name="filePath">生成Excel物理路徑</param>
+            <param name="isSave">是否存储</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExportPagesExcel``1(System.Collections.Generic.List{``0},System.String[],System.String[],System.String,System.Int32,System.Boolean)">
+            <summary>
+            导出模型数据集
+            </summary>
+            <typeparam name="T">model類型</typeparam>
+            <param name="modelList">要匯出的Model集</param>
+            <param name="Labels">显示表头名称</param>
+            <param name="FiledNamesAndFormats">表格列对应的字段名及格式</param>
+            <param name="filePath">生成Excel物理路徑</param>
+            <param name="isSave">是否存储</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExportExcel(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            导出DataTable数据集（默认DataTable表头）
+            </summary>
+            <param name="data">DataTable数据集</param>
+            <param name="filePath">文件路径</param>
+            <param name="isSave">是否存储</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExportExcel(System.Data.DataTable,System.String[],System.String,System.Boolean)">
+            <summary>
+            导出DataTable数据集
+            </summary>
+            <param name="data">DataTable数据集</param>
+            <param name="DefaultLabels">表头显示名称</param>
+            <param name="filePath">文件路径</param>
+            <param name="isSave">是否存储</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.ExportPagesExcel(System.Data.DataTable,System.String[],System.String,System.Int32,System.Boolean)">
+            <summary>
+            导出DataTable数据集
+            </summary>
+            <param name="data">DataTable数据集</param>
+            <param name="DefaultLabels">表头显示名称</param>
+            <param name="filePath">文件路径</param>
+            <param name="isSave">是否存储</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.LoadGraphExcelData(System.String,System.Data.DataTable,System.String,System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            在一个Sheet的某个位置开始填充数据
+            </summary>
+            <param name="filePath"></param>
+            <param name="data"></param>
+            <param name="startRow"></param>
+            <param name="startCol"></param>
+            <param name="loadType"></param>
+            <param name="isSave"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelNpoiUtil.LoadGraphExcelData(System.String,System.Data.DataTable,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            在一个Sheet的某个位置开始填充数据
+            </summary>
+            <param name="filePath"></param>
+            <param name="data"></param>
+            <param name="startRow"></param>
+            <param name="startCol"></param>
+            <param name="loadType"></param>
+            <param name="isSave"></param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelNpoiUtil.CreateTableHeaderHanlder">
+            <summary>
+            创建表头的方法委派代表
+            </summary>
+            <param name="Sender"></param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelCell">
+            <summary>
+            Excel单元格常用处理(抽象)类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetValue(System.Boolean)">
+            <summary>
+            设定单元格值
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetValue(System.DateTime)">
+            <summary>
+            设定单元格值
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetValue(System.Double)">
+            <summary>
+            设定单元格值
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetValue(NPOI.SS.UserModel.IRichTextString)">
+            <summary>
+            设定单元格值
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetValue(System.String)">
+            <summary>
+            设定单元格值
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetValue(System.Object,System.Type,System.String)">
+            <summary>
+            设定单元格值
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetWidth(System.Int32)">
+            <summary>
+            设定单元格宽度
+            </summary>
+            <param name="Width"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetHeight(System.Int32)">
+            <summary>
+            设定单元格高度
+            </summary>
+            <param name="Width"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.CloneStyle(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            克隆样式并赋给自己单元格
+            若不克隆，则修改为当前所指定的公共样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+            <param name="CloneStyleFont"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.CloneStyle(System.Boolean)">
+            <summary>
+            克隆样式并赋给自己单元格
+            若不克隆，则修改为当前所指定的公共样式
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+            <param name="CloneStyleFont"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.CopyStyle(System.Int32,System.Int32)">
+            <summary>
+            复制单元格样式(非克隆)
+            </summary>
+            <param name="targetRowIndex"></param>
+            <param name="targetColumnIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.ClearStyle">
+            <summary>
+            清除自己的样式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetStyle(NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            设置单元格样式
+            </summary>
+            <param name="SetCellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetStyle(PDSS.MVC.Utility.ExcelCellStyle)">
+            <summary>
+            设置单元格样式
+            </summary>
+            <param name="excelCellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetStyle(NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+            设置水平位置
+            </summary>
+            <param name="Alignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetStyle(NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+            设置垂直位置
+            </summary>
+            <param name="VAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.NewStyle(PDSS.MVC.Utility.ExcelColor)">
+            <summary>
+            新增一個字体颜色样式
+            </summary>
+            <param name="fontColor">字體顏色</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetStyle(PDSS.MVC.Utility.ExcelColor)">
+            <summary>
+            设置字体颜色
+            </summary>
+            <param name="FontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.NewStyle(System.String,System.Int32,System.Boolean)">
+            <summary>
+            新增一個字体样式
+            </summary>
+            <param name="FontName"></param>
+            <param name="FontSize">字号</param>
+            <param name="IsItalic">斜体</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetStyle(System.String,System.Int32,System.Boolean)">
+            <summary>
+            设置字体样式
+            </summary>
+            <param name="FontName"></param>
+            <param name="FontSize">字号</param>
+            <param name="IsItalic">斜体</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetBold(System.Boolean)">
+            <summary>
+            设置字体粗体
+            </summary>
+            <param name="RowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetBorder(PDSS.MVC.Utility.ExcelColor,PDSS.MVC.Utility.ExcelColor,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设定边框
+            </summary>
+            <param name="borderColor"></param>
+            <param name="backgroundColor"></param>
+            <param name="borderStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetToDefaultCellStyle">
+            <summary>
+            将当前样式设为默认样式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetCellFormula(System.String)">
+            <summary>
+            设定函数
+            </summary>
+            <param name="Formula">the formula to Set, e.g. "SUM(C4:E4)</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetCellType(NPOI.SS.UserModel.CellType)">
+            <summary>
+            设定单元格存储类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.SetCellType(System.Type)">
+            <summary>
+            设定单元格存储类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCell.MergedTo(System.Int32,System.Int32)">
+            <summary>
+            合并单元格
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCell.Sheet">
+            <summary>
+            Sheet页
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCell.NpoiInstance">
+            <summary>
+            自定义Npoi对像
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCell.Cell">
+            <summary>
+            原单元格式对像
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCell.Style">
+            <summary>
+            单元格样式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.NpoiExcellCell">
+            <summary>
+            Excel单元格常用处理类 (私有)
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcellCell.#ctor(PDSS.MVC.Utility.ExcelNpoiBase,NPOI.SS.UserModel.ICell)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="Cell"></param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelVersion">
+            <summary>
+            Excel版本
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelVersion.V2003">
+            <summary>
+            Excel2003
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelVersion.V2007">
+            <summary>
+            Excel2007
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelAction">
+            <summary>
+            Excel相关对像操作结果
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelAction.Exists">
+            <summary>
+            (原)已存在
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelAction.Create">
+            <summary>
+            原不存在但已被创建
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelAction.NoExists">
+            <summary>
+            不存在
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelSheet">
+            <summary>
+            Excel页操作结果
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelSheet.Set(System.String,System.Boolean)">
+            <summary>
+            设定当前Sheet对像，并返回设定结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelSheet.Set(System.Int32)">
+            <summary>
+            设定当前Sheet对像，并返回设定结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelSheet.Workbook">
+            <summary>
+            当前Workbook
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelSheet.Base">
+            <summary>
+            Sheet页
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelSheet.SheetName">
+            <summary>
+            Sheet页面名称
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelSheet.Status">
+            <summary>
+            操作之后的状态
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.NpoiExcelSheet">
+            <summary>
+            Excel页操作结果 (私有)
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelSheet.#ctor(NPOI.SS.UserModel.IWorkbook,System.String,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="Workbook"></param>
+            <param name="SheetName"></param>
+            <param name="CreateIfExists"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelSheet.#ctor(NPOI.SS.UserModel.IWorkbook,System.Int32)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="Workbook"></param>
+            <param name="SheetName"></param>
+            <param name="CreateIfExists"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.NpoiExcelSheet.#ctor(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ISheet)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="Workbook"></param>
+            <param name="Sheet"></param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelCellStyle">
+            <summary>
+            Excel单元格默认样式(抽象)类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.Clear">
+            <summary>
+            清空样式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.Copy(System.Int32,System.Int32)">
+            <summary>
+            复制样式
+            </summary>
+            <param name="targetRowIndex"></param>
+            <param name="targetColumnIndex"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.SetToNormalStyle">
+            <summary>
+            设置成普通样式
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.SetBorder(PDSS.MVC.Utility.ExcelColor,PDSS.MVC.Utility.ExcelColor,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设定边框与背景
+            </summary>
+            <param name="borderColor">边框颜色</param>
+            <param name="backgroundColor">背景颜色</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.SetBorder(NPOI.SS.UserModel.ICellStyle,PDSS.MVC.Utility.ExcelColor,PDSS.MVC.Utility.ExcelColor,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设定边框与背景
+            </summary>
+            <param name="style"></param>
+            <param name="borderColor">边框颜色 (等null即无边框)</param>
+            <param name="backgroundColor">背景颜色 (等null即无背景色)</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.SetFont(PDSS.MVC.Utility.ExcelColor,System.Int16,System.String,NPOI.SS.UserModel.FontBoldWeight,System.Boolean)">
+            <summary>
+            设置字体
+            </summary>
+            <param name="color"></param>
+            <param name="fontsize"></param>
+            <param name="fontName"></param>
+            <param name="BoldWeight"></param>
+            <param name="IsItalic"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.SetFont(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ICellStyle,PDSS.MVC.Utility.ExcelColor,System.Int16,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            设置字体
+            </summary>
+            <param name="workbook"></param>
+            <param name="style"></param>
+            <param name="color"></param>
+            <param name="fontsize"></param>
+            <param name="fontName"></param>
+            <param name="BoldWeight"></param>
+            <param name="IsItalic"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelCellStyle.CloneStyle(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Clone样式
+            </summary>
+            <param name="Sheet"></param>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+            <param name="CloneStyleFont"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCellStyle.Workbook">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCellStyle.Sheet">
+            <summary>
+            当前Sheet
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCellStyle.OperationStatus">
+            <summary>
+            操作状态
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ExcelCellStyle.Base">
+            <summary>
+            样式基类
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.NpoiExcelCellStyle">
+            <summary>
+            Excel单元格默认样式类 (私有)
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelPostion">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelPostion.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelPostion.#ctor(System.Int32,System.Int32)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="RowIndex"></param>
+            <param name="ColumnIndex"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelPostion.Add(System.Int32,System.Int32)">
+            <summary>
+            行列加法
+            </summary>
+            <param name="opRowIndex"></param>
+            <param name="opColumnIndex"></param>
+            <returns>是否超界了</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelPostion.Clone">
+            <summary>
+            克隆一个对像
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelPostion.Equal(System.Int32,System.Int32)">
+            <summary>
+            是否等于
+            </summary>
+            <param name="opRowIndex"></param>
+            <param name="opColumnIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelPostion.Equal(PDSS.MVC.Utility.ExcelPostion)">
+            <summary>
+            是否等于
+            </summary>
+            <param name="opPostion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelDemo">
+            <summary>
+            Excel类Demo
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.ExcelReaderUtil">
+            <summary>
+            读取Ecel类
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelReaderUtil.excelPath">
+            <summary>
+            Excel文件位置
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelReaderUtil.excelTableName">
+            <summary>
+            Excel工作表名称
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ExcelReaderUtil.connStr">
+            <summary>
+            Excel版本
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelReaderUtil.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="ExcelPath">物理路径</param>
+            <param name="ExcelTableName">Sheet名称，可以为空</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelReaderUtil.IsExist">
+            <summary>
+            是否存在表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelReaderUtil.GetFirstTableName">
+            <summary>
+            获得第一Sheet页的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ExcelReaderUtil.GetTable">
+            <summary>
+            获得数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.FormatConverter.GetDiscription(System.Enum)">
+            <summary>
+            返回枚举类型的描述信息
+            </summary>
+            <param name="myEnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.FormatConverter.Convert(System.String,System.String,System.String,PDSS.MVC.Utility.FormatConverter.VideoType,System.Boolean,System.Boolean)">
+            <summary>
+            运行格式转换
+            </summary>
+            <param name="sourceFile">要转换文件绝对路径</param>
+            <param name="destPath">转换结果存储的相对路径</param>
+            <param name="videotype">要转换成的文件类型</param>
+            <param name="createImage">是否生成截图</param>
+            <returns>
+            执行成功返回空，否则返回错误信息
+            </returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.FormatConverter.ConvertImage(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            运行格式转换
+            </summary>
+            <param name="sourceFile">要转换文件绝对路径</param>
+            <param name="destPath">转换结果存储的相对路径</param>
+            <param name="uniquename">The uniquename.</param>
+            <param name="createImage">是否生成截图</param>
+            <param name="createImage">是否提取视频长度</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.FormatConverter.GenerateImage(System.String,System.String,System.String,System.String)">
+            <summary>
+            最終生成圖片的方法
+            </summary>
+            <param name="sourceFile">The source file.</param>
+            <param name="imgpath">The imgpath.</param>
+            <param name="imgsize">The imgsize.</param>
+            <param name="ImgstartInfo">The imgstart information.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.FormatConverter.DestVideo">
+            <summary>
+            视频路径
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.FormatConverter.DestImage">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.FormatConverter.VideoLength">
+            <summary>
+            视频长度
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.GPSUtil.GetDistance(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            获得两点的距离
+            </summary>
+            <param name="lat1">纬度(y1)</param>
+            <param name="lng1">经度(x1)</param>
+            <param name="lat2">纬度(y2)</param>
+            <param name="lng2">经度(x2)</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.GPSUtil.SzToBj">
+            <summary>
+            深圳到北京的距离
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:PDSS.MVC.Utility.GPSUtil.GetPlaceNameByGoogle(PDSS.MVC.Utility.GPSUtil.HDCoor,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:PDSS.MVC.Utility.GPSUtil.ToBDCoor(PDSS.MVC.Utility.GPSUtil.HDCoor)">
+            <summary>
+            火星坐标系轉百度坐标系
+            </summary>
+            <param name="GoogleCoor">The google coor.</param>
+            <returns>BDCoor.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.GPSUtil.ToHDCoor(PDSS.MVC.Utility.GPSUtil.BDCoor)">
+            <summary>
+            百度坐标系轉火星坐标系
+            </summary>
+            <param name="GoogleCoor">The google coor.</param>
+            <returns>BDCoor.</returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.GPSUtil.BDCoor">
+            <summary>
+            百度坐标系 (BD-09)
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.GPSUtil.HDCoor">
+            <summary>
+            火星坐标系 (GCJ-02) [谷歌、高德]
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.GPSUtil.BaiduAndGoogle.bd_encrypt(System.Double,System.Double)">
+            <summary>
+            谷歌轉百度
+            </summary>
+            <param name="gg_lat"></param>
+            <param name="gg_lon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.GPSUtil.BaiduAndGoogle.bd_decrypt(System.Double,System.Double)">
+            <summary>
+            百度轉谷歌
+            </summary>
+            <param name="bd_lat"></param>
+            <param name="bd_lon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.GPSUtil.BaiduAKSNCaculater.BaiduLBSUrl(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Baidus the LBS URL.
+            </summary>
+            <param name="url">不包含http://api.map.baidu.com部分的URL</param>
+            <param name="sk">The sk.</param>
+            <param name="querystring_arrays">The querystring_arrays.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Image2Util.CatchImage(System.String)">
+            <summary>
+            抓取图片
+            </summary>
+            <param name="strUrl">The string URL.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Image2Util.IsAnimatedGif(System.Drawing.Image)">
+            <summary>
+            是否Gif动画
+            </summary>
+            <param name="gif">The GIF.</param>
+            <returns><c>true</c> if [is animated GIF] [the specified GIF]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Image2Util.IsAnimatedGif(System.String)">
+            <summary>
+            是否Gif动画
+            </summary>
+            <param name="strUrl">The string URL.</param>
+            <returns><c>true</c> if [is animated GIF] [the specified string URL]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Image2Util.IsTransparent(System.Drawing.Image)">
+            <summary>
+            判断图片是否透明
+            </summary>
+            <param name="img">The img.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.UploadBase64Str(System.Web.HttpPostedFileBase)">
+            <summary>
+            上传获得Base64字符
+            </summary>
+            <param name="hpfb">Request.Files["icon"]</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.UploadBase64Str(System.IO.Stream)">
+            <summary>
+            获得Base64字符
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.ThumbnailBase64Str(System.IO.Stream,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            获得图片缩略图
+            </summary>
+            <param name="imageStream"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="trim">是否修剪</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.ThumbnailBase64Str(System.Drawing.Image,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            获得图片缩略图
+            </summary>
+            <param name="imageStream"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="trim">是否修剪</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.ThumbnailBaseFun(System.Drawing.Image,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            获得图片缩略图Image对像 基本方法
+            </summary>
+            <param name="originImage"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="trim">是否修剪</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.ThumbnailSave(System.String,System.Int32,System.Int32,System.Boolean,System.String)">
+            <summary>
+            保存缩略图
+            </summary>
+            <param name="ImagePath"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.GetThumbnailPath(System.String,System.String)">
+            <summary>
+            获得缩略图　路径
+            </summary>
+            <param name="OriginPath"></param>
+            <param name="Perfix">缩略图前缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.ImageToStream(System.Drawing.Image)">
+            <summary>
+            转成Stream
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.PostUrl">
+            <summary>
+            上传的目标Url (由此Url接收数据)
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.UploadInputName">
+            <summary>
+            目标Url中接收图片Input名称
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.PostOtherValue">
+            <summary>
+            提交Form的其它值
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.RequestBytes">
+            <summary>
+            向目标Url请求的Stream数据
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.ProxyInfo">
+            <summary>
+            代理信息
+            <para>格式：127.0.0.1|3128|user|pwd　或　127.0.0.1|3128</para>
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.IsTransparentPalette(System.Drawing.Imaging.ColorPalette)">
+            <summary>
+            判断图片是否透明
+            <para>好像判断不出来</para>
+            </summary>
+            <param name="palette">The palette.</param>
+            <returns><c>true</c> if [is transparent palette] [the specified palette]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.#ctor(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="PostUrl">上传的目标Url (由此Url接收数据)</param>
+            <param name="UploadInputName">目标Url中接收图片Input名称</param>
+            <param name="PostOtherValue">提交Form的其它值</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile(System.IO.Stream,System.String)">
+            <summary>
+            根据文件流保存文件
+            </summary>
+            <param name="sourceStream">源文件的数据流</param>
+            <param name="sourceFileName">源文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile``1(``0,System.Boolean,System.String)">
+            <summary>
+            将本网站相关对像上传至目标服务上
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sourcePostedFile"></param>
+            <param name="UseManyTimes"></param>
+            <returns></returns>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.sourceStream">
+            <summary>
+            文件流
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.ImageUtil.sourceFileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.getInfo(System.Object)">
+            <summary>
+            获得相关信息
+            </summary>
+            <param name="sourcePostedFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.SaveAs(System.Object,System.String)">
+            <summary>
+            保存文件
+            </summary>
+            <param name="sourcePostedFile"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.Close">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            向指定Url上传图片
+            </summary>
+            <param name="uploadInputName">图片Input名称</param>
+            <param name="sourcePath">图片物理路径</param>
+            <param name="postUrl">上传的Url</param>
+            <param name="PostOtherValue">提交Form的其它值</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile(System.String,System.Drawing.Image,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            传送文件
+            </summary>
+            <param name="uploadInputName"></param>
+            <param name="image"></param>
+            <param name="postUrl"></param>
+            <param name="PostOtherValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile(System.String,System.Web.HttpPostedFileBase,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            传送文件
+            </summary>
+            <param name="uploadInputName"></param>
+            <param name="sourcePostedFile"></param>
+            <param name="postUrl"></param>
+            <param name="PostOtherValue"></param>
+            <param name="UseManyTimes">允许多次使用</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile(System.String,System.Web.HttpPostedFile,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            传送文件
+            </summary>
+            <param name="uploadInputName"></param>
+            <param name="sourcePostedFile"></param>
+            <param name="postUrl"></param>
+            <param name="PostOtherValue"></param>
+            <param name="UseManyTimes">允许多次使用</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.ImageUtil.TransferFile(System.String,System.String,System.IO.Stream,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            传送文件
+            </summary>
+            <param name="uploadInputName"></param>
+            <param name="sourceFileName"></param>
+            <param name="sourceStream">只支持部分类型的Stream</param>
+            <param name="postUrl"></param>
+            <param name="PostOtherValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.ImageUtil.IsAnimatedGif">
+            <summary>
+            上传的图片是否为GIF动画
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.JsonUtil">
+            
+            JSON序列化和反序列化辅助类 
+            
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.Serializer(System.Object,System.Boolean)">
+            <summary>
+            JSON序列化
+            </summary>
+            <param name="obj"></param>
+            <param name="clear">清除为null的项</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.Deserialize``1(System.String)">
+            <summary>
+            JSON反序列化 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.Deserialize``1(System.String,``0)">
+            <summary>
+            JSON反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json">The json.</param>
+            <param name="ObjOut">The object out.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.Deserialize``1(System.Web.HttpContextBase,``0,System.Boolean)">
+            <summary>
+            JSON反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Context">当前Context</param>
+            <param name="ObjOut">对像格式</param>
+            <param name="WriteLog">是否写Log记录</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.Deserialize``1(System.Web.HttpContext,``0,System.Boolean)">
+            <summary>
+            JSON反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Context">当前Context</param>
+            <param name="ObjOut">对像格式</param>
+            <param name="WriteLog">是否写Log记录</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.DeserializeAnonymousType``1(System.String,``0)">
+            <summary>
+            输出一个对像
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json">The json.</param>
+            <param name="ObjOut">The object out.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.JsonTo(System.Data.DataTable,System.String)">
+            <summary>
+            創建表
+            </summary>
+            <param name="dt"></param>
+            <param name="strjson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.CreateDataColumn(System.Data.DataTable,System.String)">
+            创建列
+        </member>
+        <member name="M:PDSS.MVC.Utility.JsonUtil.CreateDataRow(System.Data.DataTable,System.String)">
+            创建行内容
+        </member>
+        <member name="T:PDSS.MVC.Utility.LUtil">
+            <summary>
+            多语言 LanguageUtil
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.LangHtml(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            View页面调用方法。获得当前语言格式，判断需要读取哪一个资源文件
+            </summary>
+            <param name="htmlhelper"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.Lang(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            View页面调用方法。获得当前语言格式，判断需要读取哪一个资源文件
+            </summary>
+            <param name="htmlhelper"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.GetLang(System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="filePath"></param>
+            <param name="viewName"></param>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.Lang(System.Web.HttpContextBase,System.String)">
+            <summary>
+            获得当前语言格式，判断需要读取哪一个资源文件
+            这个方法应该是针对Controllers层的修改
+            </summary>
+            <param name="httpContext"></param>
+            <param name="key">更换语言的文本</param>
+            <returns>资源文件中与key相对应的文本</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.GetLang(System.Web.HttpContextBase)">
+            <summary>
+            获取当前的语言格式，如果获取不到，即Cookie为空，返回默认值cn
+            这个方法是默认修改cookie的
+            </summary>
+            <param name="httpContext"></param>
+            <returns>返回语言格式</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.GetLang(System.String)">
+            <summary>
+            在数组Dic中找与字符串name向匹配的语言格式，匹配不到则返回默认语言格式cn
+            这个方法是在Demo/TestModel页面获取当前语言格式所用到的
+            </summary>
+            <param name="name"></param>
+            <returns>返回语言格式</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.GetLangName(System.Web.HttpContextBase)">
+            <summary>
+            获取当前Cookid中存放的语言格式，并从数组Dic中返回相对应的Value
+            </summary>
+            <param name="httpContext"></param>
+            <returns>数组Dic中相对应的语言名称</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LUtil.SetLang(System.Web.HttpContextBase,System.String@)">
+            <summary>
+            将选择的语言格式lang存放到Cookie中作为后续语言判断的依据
+            </summary>
+            <param name="httpContext"></param>
+            <param name="lang">选择的语言格式</param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.LUtil.Dic">
+            <summary>
+            此数组存放语言格式，作为后续判断语言格式的依据
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.MultiLangSetting">
+            <summary>
+            多语言设定
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MultiLangSetting.Set(System.String)">
+            <summary>
+            赋值
+            </summary>
+            <param name="PathName"></param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.LunDay">
+            <summary>
+            LunDay 的摘要说明。
+            用法说明
+            直接调用即可,比较简单
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LunDay.GetLunarCalendar(System.DateTime)">
+            <summary>
+            获取对应日期的农历 以天干地支顯示
+            </summary>
+            <param name="dtDay">公历日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LunDay.GetLunarCalendarObj(System.DateTime)">
+            <summary>
+            获取对应日期的农历 返回LunDate類型
+            </summary>
+            <param name="dtDay">公历日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LunDay.GetChineseDisplay(PDSS.MVC.Utility.LunDate)">
+            <summary>
+            显示农历
+            </summary>
+            <param name="lundate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.LunDate">
+            <summary>
+            农历
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.LunDate.yyyy">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.LunDate.mm">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.LunDate.dd">
+            <summary>
+            日
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.LunDate.#ctor(System.Boolean,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.LunDate.IsRunYue">
+            <summary>
+            润月
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.LunDate.DateString">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.LunDate.Date">
+            <summary>
+            用DateTime表示 (不建议使用)
+            若出现农历二月三十，则用2月最后一天表示
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.MResult`1">
+            <summary>
+            封裝一個Model
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MResult`1.Clone">
+            <summary>
+            Clone數據
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.MTwins`2">
+            <summary>
+            兩個Model放一起
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:PDSS.MVC.Utility.MTriple`3">
+            <summary>
+            三個Model放一起
+            </summary>
+            <typeparam name="X"></typeparam>
+            <typeparam name="Y"></typeparam>
+            <typeparam name="Z"></typeparam>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.GetMsSqlParam(System.String,System.Data.SqlDbType,System.Object,System.Int32)">
+            <summary>
+            获得一个MsSqlParameter对像
+            </summary>
+            <param name="parameterName"></param>
+            <param name="dbType"></param>
+            <param name="value"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.GetConn(System.Data.Common.DbConnection)">
+            <summary>
+            获得Model类对应的MsSqlConnection
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Nullable{System.Data.CommandType},System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="Conn"></param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn"></param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Nullable{System.Data.CommandType},System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Nullable{System.Data.CommandType},System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+            <param name="Conn">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="CommType">Type of the comm.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Nullable{System.Data.CommandType},System.Boolean,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+            <param name="Conn">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="CommType">Type of the comm.</param>
+            <param name="CloseConnInEnd">if set to <c>true</c> [close connection in end].</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},System.Boolean,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Boolean,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="MvcDbConn"></param>
+            <param name="sql"></param>
+            <param name="CloseConnInEnd"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Boolean,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="MvcDbConn"></param>
+            <param name="sql"></param>
+            <param name="CloseConnInEnd"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回Object
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            返回DataReader
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.Close(System.Data.Common.DbConnection)">
+            <summary>
+            关闭数据库链接
+            </summary>
+            <param name="MvcDbConn"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.GetParam(System.String,System.Data.SqlDbType,System.Object,System.Int32)">
+            <summary>
+            獲得一個MsSqlParameter對像
+            </summary>
+            <param name="parameterName"></param>
+            <param name="dbType"></param>
+            <param name="value"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.ExecutePaged``1(System.Data.Objects.ObjectContext,System.String,System.String,System.Int32,System.Int32,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            分页数据
+            </summary>
+            <param name="db"></param>
+            <param name="sql"></param>
+            <param name="CurrentPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.PagedDataTable(System.Data.SqlClient.SqlConnection,System.String,System.String,System.Int32,System.Int32,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            分页查询数据，返回DataTable及总数
+            </summary>
+            <param name="Conn">The MVC database connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="orderby">The orderby.</param>
+            <param name="CurrentPage">The current page.</param>
+            <param name="MaxPerPage">The maximum per page.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>Tuple&lt;DataTable, System.Int32&gt;.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MsSqlUtil.CloneSqlParams(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Clone
+            </summary>
+            <param name="CopySqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.GetMySqlParam(System.String,MySql.Data.MySqlClient.MySqlDbType,System.Object,System.Int32,System.Data.ParameterDirection)">
+            <summary>
+            获得一个MySqlParameter对像
+            </summary>
+            <param name="parameterName"></param>
+            <param name="dbType"></param>
+            <param name="value"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.GetParam(System.String,MySql.Data.MySqlClient.MySqlDbType,System.Object,System.Int32,System.Data.ParameterDirection)">
+            <summary>
+            获得一个MySqlParameter对像
+            </summary>
+            <param name="parameterName"></param>
+            <param name="dbType"></param>
+            <param name="value"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.GetConn(System.Data.Common.DbConnection)">
+            <summary>
+            获得Model类对应的MySqlConnection
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,System.Collections.Generic.List{MySql.Data.MySqlClient.MySqlParameter})">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteDataSet(MySql.Data.MySqlClient.MySqlConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="Conn"></param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,System.Collections.Generic.List{MySql.Data.MySqlClient.MySqlParameter})">
+            <summary>
+            返回多个表的DataTable 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteDataTable(MySql.Data.MySqlClient.MySqlConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecutePaged``1(System.Data.Objects.ObjectContext,System.String,System.String,System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            MySql分页方法
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="db"></param>
+            <param name="sql"></param>
+            <param name="orderby"></param>
+            <param name="currentPage"></param>
+            <param name="maxprepage"></param>
+            <param name="paras"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.PagedDataTable(MySql.Data.MySqlClient.MySqlConnection,System.String,System.String,System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            分页查询数据，返回DataTable及总数
+            </summary>
+            <param name="Conn">The MVC database connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="orderby">The orderby.</param>
+            <param name="CurrentPage">The current page.</param>
+            <param name="MaxPerPage">The maximum per page.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>Tuple&lt;DataTable, System.Int32&gt;.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteNonQuery(MySql.Data.MySqlClient.MySqlConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行不返回结果
+            </summary>
+            <param name="conn">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteScalar(System.Data.Common.DbConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.ExecuteReader(System.Data.Common.DbConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            返回DataReader
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.MySqlUtil.Close(System.Data.Common.DbConnection)">
+            <summary>
+            关闭数据库链接
+            </summary>
+            <param name="MvcDbConn"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.GetParam(System.String,Oracle.ManagedDataAccess.Client.OracleDbType,System.Object,System.Int32,System.Data.ParameterDirection)">
+            <summary>
+            获得一个OracleParameter对像
+            </summary>
+            <param name="parameterName"></param>
+            <param name="dbType"></param>
+            <param name="value"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.GetConn(System.Data.Common.DbConnection)">
+            <summary>
+            获得Model类对应的OracleConnection
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Nullable{System.Data.CommandType},Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="Conn"></param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataSet(System.Data.Common.DbConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回多个表的DataSet 
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn"></param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,System.Collections.Generic.List{Oracle.ManagedDataAccess.Client.OracleParameter})">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Nullable{System.Data.CommandType},Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="Conn"></param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteDataTable(System.Data.Common.DbConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回多个表的DataTable
+            注：若返回一个表建议使用db.ExecuteStoreQuery&lt;model&gt;方法
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Nullable{System.Data.CommandType},System.Boolean,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="Conn">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="CommType">Type of the comm.</param>
+            <param name="CloseConnInEnd">if set to <c>true</c> [close connection in end].</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Nullable{System.Data.CommandType},Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="Conn">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="CommType">Type of the comm.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},System.Boolean,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="CommType"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            ExecuteNonQuery
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Boolean,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="MvcDbConn">The MVC database connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="CloseConnInEnd">if set to <c>true</c> [close connection in end].</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Nullable{System.Data.CommandType},Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="MvcDbConn">The MVC database connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="CommType">Type of the comm.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Boolean,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回Object
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteScalar(System.Data.Common.DbConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="MvcDbConn">The MVC database connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecuteReader(System.Data.Common.DbConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            返回DataReader
+            </summary>
+            <param name="MvcDbConn">ObjectContext.Connection</param>
+            <param name="sql"></param>
+            <param name="SqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.Close(System.Data.Common.DbConnection)">
+            <summary>
+            关闭数据库链接
+            </summary>
+            <param name="MvcDbConn"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.GetParam(System.String,System.Data.SqlDbType,System.Object,System.Int32)">
+            <summary>
+            獲得一個MsSqlParameter對像
+            </summary>
+            <param name="parameterName"></param>
+            <param name="dbType"></param>
+            <param name="value"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.ExecutePaged``1(System.Data.Objects.ObjectContext,System.String,System.String,System.Int32,System.Int32,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            分页数据
+            </summary>
+            <param name="db"></param>
+            <param name="sql"></param>
+            <param name="CurrentPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.PagedDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.String,System.Int32,System.Int32,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            分页查询数据，返回DataTable及总数
+            </summary>
+            <param name="Conn">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="orderby">The orderby.</param>
+            <param name="CurrentPage">The current page.</param>
+            <param name="MaxPerPage">The maximum per page.</param>
+            <param name="SqlParams">The SQL parameters.</param>
+            <returns>Tuple&lt;DataTable, System.Int32&gt;.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.CloneSqlParams(Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Clone
+            </summary>
+            <param name="CopySqlParams"></param>
+            <returns></returns>
+        </member>
+        <member name="F:PDSS.MVC.Utility.OracleUtil.DebugForParams">
+            <summary>
+            是否调试赋值SQL代码
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.OracleUtil.ParamsSQL">
+            <summary>
+            获得参数的赋值SQL代码
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.OracleUtil.SQLFormat">
+            <summary>
+            格式化SQL语句类
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.OracleUtil.SQLFormat.RemoveRemark">
+            <summary>
+            是否每行都去掉前后空格
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.OracleUtil.SQLFormat.ToString">
+            <summary>
+            转成字符中，去掉注释
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.OracleUtil.SQLFormat.SQL">
+            <summary>
+            最后的SQL
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.SingatureUtil">
+            <summary>
+            签名类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.SingatureUtil.GetSignature(System.String)">
+            <summary>
+            获得签名
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.SingatureUtil.SignatureQuery(System.String)">
+            <summary>
+            获得签名QueryString信息
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.SingatureUtil.GetSignatureQuery(System.String)">
+            <summary>
+            获得签名QueryString信息
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.SingatureUtil.CheckSignature(System.String,System.String,System.String,System.String)">
+            <summary>
+            验证香信签名
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.SingatureUtil.ModSign">
+            <summary>
+            签名Model
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.StopwatchUtil">
+            <summary>
+            跑表类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StopwatchUtil.Pause(System.String)">
+            <summary>
+            计次
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StopwatchUtil.GetResult">
+            <summary>
+            获得结果
+            </summary>
+            <returns>result.</returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.StopwatchUtil.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.StopwatchUtil.Elapsed">
+            <summary>
+            運行總時間
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.StopwatchUtil.Elapseds">
+            <summary>
+            所有時間間隔數據
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.IsDoubleStr(System.Char)">
+            <summary>
+            判定char是否为双字符
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.Left(System.String,System.Int32,System.String)">
+            <summary>
+            网页字串长度控制,截取字符串s前i-1位,后面连接字符串extStr;如果字符串s长度不足i位,则直接返回字符串s;如果i为0,返回空
+            </summary>
+            <param name="s">补截字串</param>
+            <param name="i">截取字串长度i-1</param>
+            <param name="extStr">後缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.Left(System.String,System.Int32)">
+            <summary>
+            网页字串长度控制,截取字符串s前i-1位;如果字符串s长度不足i位,则直接返回字符串s;如果i为0,返回空
+            </summary>
+            <param name="s">补截字串</param>
+            <param name="i">截取字串长度i-1</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.Left(System.String)">
+            <summary>
+            左截取32位，右补...
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.HtmlLeft(System.String,System.Int32)">
+            <summary>
+            将html字符串s清除hmtl字符后,截取前i-1位
+            </summary>
+            <param name="s"></param>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.CharLeft(System.String,System.Int32)">
+            <summary>
+            左截取字符串s前i位,不足i位则返回整个字符串s
+            </summary>
+            <param name="s"></param>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.CharRight(System.String,System.Int32)">
+            <summary>
+            右截取字符串s前i位,不足i位则返回整个字符串s
+            </summary>
+            <param name="s"></param>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.StrUtil.Len(System.String)">
+            <summary>
+            返回字符串长度,双字节字符算2位
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:PDSS.MVC.Utility.StrUtil.LineWrap(System.String,System.Int32,System.Single)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:PDSS.MVC.Utility.StrUtil.LineWrap(System.String,System.Int32,System.Single,System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:PDSS.MVC.Utility.StrUtil.LineWrap(System.String,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:PDSS.MVC.Utility.StrUtil.LineWrap(System.String,System.Int32,System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <member name="T:PDSS.MVC.Utility.TimeUtil">
+            <summary>
+            时间相关类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.TimeUtil.YearStartWeekDay(System.Int32)">
+            <summary>
+            年头星期几 返囬 0~6 的数字
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.TimeUtil.WeekOfYear(System.DateTime)">
+            <summary>
+            第几周
+            </summary>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.TimeUtil.WeeksInYear(System.Int32)">
+            <summary>
+            year年共有多少周
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.UserAgentUtil.GetBrowser">
+            <summary>
+            获得浏览器名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.UserAgentUtil.GetOSVersion">
+            <summary>
+            获取操作系统版本号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.UserAgentUtil.GetIpAndType(System.String@,System.String@)">
+            <summary>
+            获得IP
+            </summary>
+            <param name="ip"></param>
+            <param name="ip_type"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.UserAgentUtil.GetIpAndType">
+            <summary>
+            获得IP
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.Util">
+            <summary>
+            其它通用类
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.Util.Rand">
+            <summary>
+            全局随机数
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.RandCode">
+            <summary>
+            获得带时间的随机码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.RandByMillisecond">
+            <summary>
+            获得带日期的毫秒数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.RandChar(System.Int32)">
+            <summary>
+            获得几位随机字符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.RandGuid">
+            <summary>
+            获得GUID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GetExtName(System.String,System.String)">
+            <summary>
+            获得文件後缀名 (不带后缀名的点)
+            </summary>
+            <param name="path">文件名或路径</param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GetFileNameWithoutExt(System.String,System.String)">
+            <summary>
+            获得文件名不带後缀名及路径
+            </summary>
+            <param name="path">文件名或路径</param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GetFileName(System.String,System.String)">
+            <summary>
+            获得文件名不带路径
+            </summary>
+            <param name="path">文件名或路径</param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatDate(System.Nullable{System.DateTime})">
+            <summary>
+            转优成时间格式
+            </summary>
+            <param name="Time"></param>
+            <param name="FormatStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatStrToDate(System.String)">
+            <summary>
+            转优成时间格式
+            </summary>
+            <param name="Time"></param>
+            <param name="FormatStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatTime(System.Nullable{System.DateTime},System.String)">
+            <summary>
+            转优成时间格式
+            </summary>
+            <param name="Time"></param>
+            <param name="FormatStr">默认为：yyyy-MM-dd HH:mm
+            当为CLUB时，当前显示时间，当年显示 3月4日，否显示“2015-05-04”
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatNum(System.Double,System.String,System.Boolean)">
+            <summary>
+            格式化数字
+            </summary>
+            <param name="d"></param>
+            <param name="format"></param>
+            <param name="trim">去掉末数0</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatNum(System.Object,System.String,System.Boolean)">
+            <summary>
+            格式化数字
+            </summary>
+            <param name="d"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatTime``1(``0,System.String)">
+            <summary>
+            转优成时间格式
+            </summary>
+            <param name="Time"></param>
+            <param name="FormatStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.JsCloseWindowRefresh(System.String)">
+            <summary>
+            JS关闭窗口 并刷新父窗口
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.JsWindowRefresh(System.String,System.String)">
+            <summary>
+            JS 并刷新窗口
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.JsCustom(System.String)">
+            <summary>
+            自定义JS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GetDir(System.Boolean)">
+            <summary>
+            网站根目录位置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GetAllDir(System.Boolean)">
+            <summary>
+            网站根目录位置(带服务器名称)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GetCurrentUrl">
+            <summary>
+            获得当前Url
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.FormatStartEndTime(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            顯示開始時間和結構時間
+            </summary>
+            <param name="StartTime"></param>
+            <param name="EndTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.LinqSqlString(System.Object)">
+            <summary>
+            Linq生成的SQL语句查看
+            </summary>
+            <param name="Query">The query.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Util.GuidFormat(System.String)">
+            <summary>
+            Unique identifiers the format.
+            </summary>
+            <param name="guid">The unique identifier.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:PDSS.MVC.Utility.CUtil">
+            <summary>
+            数据转化相关类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CInt(System.Object,System.Int32)">
+            <summary>
+            转化成整型
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CLong(System.Object,System.Int64)">
+            <summary>
+            转化成长整型
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.Round(System.Object,System.Int32)">
+            <summary>
+            四舍五入
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CDbl(System.Object,System.Double)">
+            <summary>
+            转化成双精度小数
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CDecimal(System.Object,System.Double)">
+            <summary>
+            转化成Decimal
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CFloat(System.Object,System.Single)">
+            <summary>
+            转化成浮点小数
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CBool(System.Object,System.Boolean)">
+            <summary>
+            转化成布尔值
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CDate(System.Object,System.DateTime)">
+            <summary>
+            转化成时间值
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CDate(System.Object)">
+            <summary>
+            转化成时间值
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CStr(System.Object,System.String)">
+            <summary>
+            转化非空字符串
+            </summary>
+            <param name="obj"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CStr(System.Web.Mvc.FormCollection,System.String)">
+            <summary>
+            序列化FormCollection
+            </summary>
+            <param name="form"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CNumberList``1(System.String,System.Char)">
+            <summary>
+            转化成数字数组
+            </summary>
+            <param name="StrList"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.CNumberList``1(System.String[])">
+            <summary>
+            转化成数字数组
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.Join``1(System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            将数组合成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="separator"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.GuidToString62(System.String)">
+            <summary>
+            GUID压缩
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.String62ToGuid(System.String)">
+            <summary>
+            GUID解压
+            </summary>
+            <param name="string62"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.GuidToString80(System.String)">
+            <summary>
+            GUID压缩
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.CUtil.String80ToGuid(System.String)">
+            <summary>
+            GUID解压
+            </summary>
+            <param name="string80"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.HtmlEncode(System.String)">
+            <summary>
+            将text转换成html
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.HtmlDecode(System.String)">
+            <summary>
+            将html转换成text
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.RemoveHtml(System.String)">
+            <summary>
+            移除HTML代码
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.HtmlAutoEncode(System.String)">
+            <summary>
+            自动转码
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.HtmlAddLink(System.String,System.String)">
+            <summary>
+            添加A标签链接
+            </summary>
+            <param name="s"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.DealQuery(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            处理QueryString
+            </summary>
+            <param name="QueryString"></param>
+            <param name="AddKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.HtmlUtil.DealQuery(System.String,System.String[])">
+            <summary>
+            处理QueryString
+            </summary>
+            <param name="QueryString"></param>
+            <param name="AddKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.ApiController.Initialize(System.Web.Http.Controllers.HttpControllerContext)">
+            <summary>
+            使用指定 <paramref name="controllerContext" /> 初始化 <see cref="T:System.Web.Http.ApiController" /> 实例。
+            </summary>
+            <param name="controllerContext">用于初始化的 <see cref="T:System.Web.Http.Controllers.HttpControllerContext" /> 对象。</param>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.GlobalHelper.RedirectPage">
+            <summary>
+            跳轉頁面
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.GlobalHelper.RecException(System.Web.HttpApplication)">
+            <summary>
+            Records the exception.
+            </summary>
+            <param name="GlobalPage">The global page.</param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebBase.GlobalHelper.__UserID">
+            <summary>
+            用户识别ID
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.CommonContext">
+            <summary>
+            Class CommonContext.
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonContext.Context">
+            <summary>
+            The context
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonContext.ContextBase">
+            <summary>
+            The context base
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonContext.Request">
+            <summary>
+            The request
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonContext.Response">
+            <summary>
+            The response
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonContext.#ctor(System.Web.HttpContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonContext"/> class.
+            </summary>
+            <param name="Context">The context.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonContext.#ctor(System.Web.HttpContextBase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonContext"/> class.
+            </summary>
+            <param name="Context">The context.</param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.CommonRequest">
+            <summary>
+            Class CommonRequest.
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonRequest.Req">
+            <summary>
+            The req
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonRequest.ReqB">
+            <summary>
+            The req b
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonRequest.#ctor(System.Web.HttpRequest)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonRequest"/> class.
+            </summary>
+            <param name="Request">The request.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonRequest.#ctor(System.Web.HttpRequestBase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonRequest"/> class.
+            </summary>
+            <param name="Request">The request.</param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebBase.CommonRequest.UserHostAddress">
+            <summary>
+            获取远程客户端的 IP 主机地址。
+            </summary>
+            <value>获取远程客户端的 IP 主机地址。</value>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebBase.CommonRequest.Url">
+            <summary>
+            获取有关当前请求的 URL 的信息。
+            </summary>
+            <value>包含有关当前请求的 URL 的信息的 System.Uri 对象。</value>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebBase.CommonRequest.RawUrl">
+            <summary>
+            获取当前请求的原始 URL。
+            </summary>
+            <value>当前请求的原始 URL</value>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.CommonResponse">
+            <summary>
+            Class CommonResponse.
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonResponse.Res">
+            <summary>
+            The resource
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonResponse.ResB">
+            <summary>
+            The resource b
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonResponse.#ctor(System.Web.HttpResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonResponse"/> class.
+            </summary>
+            <param name="Response">The response.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonResponse.#ctor(System.Web.HttpResponseBase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonResponse"/> class.
+            </summary>
+            <param name="Response">The response.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonResponse.Redirect(System.String,System.Boolean)">
+            <summary>
+            将客户端重定向到新的 URL。指定新的 URL 并指定当前页的执行是否应终止。
+            </summary>
+            <param name="url">目标的位置。</param>
+            <param name="endResponse">指示当前页的执行是否应终止。</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonResponse.Write(System.String)">
+            <summary>
+            将一个字符串写入 HTTP 响应输出流。
+            </summary>
+            <param name="s">要写入 HTTP 输出流的字符串。</param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.CommonServer">
+            <summary>
+            Class CommonServer.
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonServer.Srv">
+            <summary>
+            The SRV
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.CommonServer.SrvB">
+            <summary>
+            The SRV b
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonServer.#ctor(System.Web.HttpServerUtility)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonServer"/> class.
+            </summary>
+            <param name="Server">The server.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonServer.#ctor(System.Web.HttpServerUtilityBase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PDSS.MVC.Utility.WebBase.CommonServer"/> class.
+            </summary>
+            <param name="Server">The server.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonServer.ClearError">
+            <summary>
+            清除前一个异常。
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.CommonServer.MapPath(System.String)">
+            <summary>
+            返回与 Web 服务器上的指定虚拟路径相对应的物理文件路径。
+            </summary>
+            <param name="path">Web 服务器的虚拟路径。</param>
+            <returns>与 path 相对应的物理文件路径。</returns>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.Controller">
+            <summary>
+            Controller扩展类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            在进行授权时调用。
+            </summary>
+            <param name="filterContext">有关当前请求和操作的信息。</param>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebBase.Controller.Result4Exception">
+            <summary>
+            指定的错误解析页面
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.SetResult4Exception(System.Object)">
+            <summary>
+            指定的错误解析页面（用于其它方法赋值）
+            </summary>
+            <param name="obj">指定的错误解析页面</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.IsLocal(System.Web.HttpRequestBase)">
+            <summary>
+            获得是否为local服务器
+            </summary>
+            <value>是否为local服务器</value>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.OnException(System.Web.Mvc.ExceptionContext)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.ExceptionRecord(System.Exception)">
+            <summary>
+            记录异常
+            </summary>
+            <param name="Err"></param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebBase.Controller.__UserID">
+            <summary>
+            用户识别ID
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.Controller.ActionBound">
+            <summary>
+            判断Action的范围
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.ActionBound.ActionIn(System.String,System.String[])">
+            <summary>
+            判断Action是否在范围内
+            </summary>
+            <param name="descController">The desc controller.</param>
+            <param name="descActions">The desc actions.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.ActionBound.ControllerIn(System.String[])">
+            <summary>
+            判断Controller是否在范围内
+            </summary>
+            <param name="descControllers">The desc controllers.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.ActionBound.ControllerStartWith(System.String[])">
+            <summary>
+            判断Controller是否以某些字符开头
+            </summary>
+            <param name="descControllers">The desc controllers.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.Controller.ActionBound.ActionStartWith(System.String[])">
+            <summary>
+            判断Action是否以某些字符开头
+            </summary>
+            <param name="descControllers">The desc controllers.</param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebBase.WebApiExceptionFilterAttribute">
+            <summary>
+            Class WebApiExceptionFilterAttribute.
+            </summary>
+            <seealso cref="T:System.Web.Http.Filters.ExceptionFilterAttribute"/>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebBase.WebApiExceptionFilterAttribute.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            引发异常事件。
+            </summary>
+            <param name="actionExecutedContext">操作的上下文。</param>
+        </member>
+        <member name="T:PDSS.MVC.Utility.IWebLog">
+            <summary>
+            日志写入接口
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.IWebLog.WriteLog``1(``0,System.Boolean)">
+            <summary>
+            写log记录
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">日志信息</param>
+            <param name="UseXml">是否使用XML格式</param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.IWebLog.WebRootPath">
+            <summary>
+            网站根目录
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.IWebLog.IsDebug">
+            <summary>
+            是否还在Debug阶段
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebLogUtil">
+            <summary>
+            网站LOG写入工具
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.WriteLog``1(``0,System.Boolean)">
+            <summary>
+            写log记录
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">日志信息</param>
+            <param name="UseXml">是否使用XML格式</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.Write(System.String,System.String)">
+            <summary>
+            写Log
+            </summary>
+            <param name="msg"></param>
+            <param name="perfix"></param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.Instance">
+            <summary>
+            实例化对像
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.WebRootPath">
+            <summary>
+            网站根目录
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.IsDebug">
+            <summary>
+            是否还在Debug阶段
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ServerIP">
+            <summary>
+            服务器IP
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebLogUtil.ModWebLog">
+            <summary>
+            基本模型
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.WebLogUtil.ModWebLog.Sort">
+            <summary>
+            日志分类(日志来源)
+            <para>常见分类：Normal，CallWs，Err，API，以及自定义分类</para>
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.ModWebLog.ToListString">
+            <summary>
+            显示成文本LOG的格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLog.Type">
+            <summary>
+            日志类型（按重要度：Debug、警告、错误等）
+            <para>常见类型：空字符串/Debug，Warn，Err，以及自定义类型</para>
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLog.Msg">
+            <summary>
+            日志信息
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLog.ServerIP">
+            <summary>
+            服务器IP
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLog.RunTime">
+            <summary>
+            执得时间
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.ModWebLogWs.ToListString">
+            <summary>
+            显示成文本LOG的格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogWs.Url">
+            <summary>
+            请求Url
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogWs.PostData">
+            <summary>
+            提交数据
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogWs.Method">
+            <summary>
+            调用方法
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogWs.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogWs.StatusCode">
+            <summary>
+            返回的状态
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.ModWebLogErr.ToListString">
+            <summary>
+            转成文本LOG的格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogErr.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogErr.StackTrace">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogErr.UserID">
+            <summary>
+            用户帐号
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogErr.UserIP">
+            <summary>
+            用户IP
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogErr.ErrID">
+            <summary>
+            错误ID
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatch">
+            <summary>
+            计时LOG
+            </summary>
+            <seealso cref="T:PDSS.MVC.Utility.WebLogUtil.ModWebLog"/>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatch.AddStep(System.String,System.Double)">
+            <summary>
+            添加一个计时
+            </summary>
+            <param name="Name">The name.</param>
+            <param name="Time">The time.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatch.ToListString">
+            <summary>
+            显示成文本LOG的格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatch.Url">
+            <summary>
+            请求Url
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatch.TotalMillisecond">
+            <summary>
+            運行的總毫秒數
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatch.Milliseconds">
+            <summary>
+            每一步的毫秒數
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatchItem">
+            <summary>
+            计时LOG项
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatchItem.name">
+            <summary>
+            步骤名称
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogUtil.ModWebLogStopWatchItem.time">
+            <summary>
+            运行时间
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="T:PDSS.MVC.Utility.WebLogDefaultClass">
+            <summary>
+            默认的日志写入类
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WebLogDefaultClass.WriteLog``1(``0,System.Boolean)">
+            <summary>
+            写log记录
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">日志信息</param>
+            <param name="UseXml">是否使用XML格式</param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogDefaultClass.WebRootPath">
+            <summary>
+            网站根目录
+            </summary>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WebLogDefaultClass.IsDebug">
+            <summary>
+            是否还在Debug阶段
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.Wechat.Wechat">
+            <summary>
+            此方法仅用仿微信的一种数据签名方式上
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Wechat.Wechat.GetMD5(System.String)">
+            <summary>
+            MD5加密方法
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.Wechat.Wechat.GetSign``1(``0,System.String)">
+            <summary>
+            獲得簽名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.CallRest(System.String,System.String,PDSS.MVC.Utility.Method,System.Boolean,System.Int32)">
+            <summary>
+            调用Rest方法
+            </summary>
+            <param name="url"></param>
+            <param name="data">请求数据</param>
+            <param name="method">请求方式　PUT POST GET</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.CallRest(System.Object)">
+            <summary>
+            调用Rest方法
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.CallRest(PDSS.MVC.Utility.RestModel)">
+            <summary>
+            调用Rest方法
+            </summary>
+            <param name="mod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.CallSoap(System.String,System.String,System.String)">
+            <summary>
+            调用Soap方法
+            </summary>
+            <param name="Url"></param>
+            <param name="MethodName"></param>
+            <param name="xmlData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.GetStream(System.String,System.String)">
+            <summary>
+            获得流
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.SaveAsLocalFile(System.String,System.String,System.String)">
+            <summary>
+            保存网络文件到本地
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="LocalFilePath">The local file path.</param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.WsUtil.WriteLog(System.String,System.String)">
+            <summary>
+            写Log
+            <para><u>此方法已过期 *</u></para>
+            <para><i><u>请用WebLogUtil.Write或WebLogUtil.WriteLog代替</u></i></para>
+            </summary>
+            <param name="msg"></param>
+            <param name="perfix"></param>
+        </member>
+        <member name="P:PDSS.MVC.Utility.WsUtil.WebRootPath">
+            <summary>
+            网站根目录
+            <para><u>此属性已过期 *</u></para>
+            <para><i><u>请用WebLogUtil.WebRootPath代替</u></i></para>
+            </summary>
+        </member>
+        <!-- 对于成员“P:PDSS.MVC.Utility.WsUtil.IsBug”忽略有格式错误的 XML 注释 -->
+        <member name="T:PDSS.MVC.Utility.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.TrustAllCertificatePolicy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.RestModel">
+            <summary>
+            Rest模型
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.url">
+            <summary>
+            请求的网页地址
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.data">
+            <summary>
+            提交的请求数据
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.method">
+            <summary>
+            请求的方法
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.Timeout">
+            <summary>
+            超时时间，单位毫秒，默认为12000(毫秒)
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.UseAsync">
+            <summary>
+            是否异步请求
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.ContentType">
+            <summary>
+            數據類型
+            <para>普通表单提交："application/x-www-form-urlencoded; charset=utf-8;"默認為："text/plain; charset=utf-8;"</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.Headers">
+            <summary>
+            Header参数
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.ProxyInfo">
+            <summary>
+            代理信息
+            <para>格式：127.0.0.1|3128|user|pwd　或　127.0.0.1|3128</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.SessionInfo">
+            <summary>
+            请求时的Session信息
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.TryAgainPlanTimes">
+            <summary>
+            计划再次执行的次数
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.TryAgainExecuteTimes">
+            <summary>
+            已执行的次数
+            </summary>
+        </member>
+        <member name="F:PDSS.MVC.Utility.RestModel.TryIntervalSeconds">
+            <summary>
+            执行间隔数
+            </summary>
+        </member>
+        <member name="T:PDSS.MVC.Utility.RestModel._ControlSessionID">
+            <summary>
+            控制请求时的SessionID
+            </summary>
+        </member>
+        <member name="M:PDSS.MVC.Utility.RestModel._ControlSessionID.Set(System.String,System.String)">
+            <summary>
+            给Session赋值
+            </summary>
+            <param name="SessionID">SessionID</param>
+            <param name="Domain">Domain</param>
+        </member>
+        <!-- 对于成员“M:PDSS.MVC.Utility.XmlUtil.Deserialize(System.Type,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Deserialize(System.Type,System.IO.Stream)">
+            <summary> 
+            Xml反序列化 
+            </summary> 
+            <param name="type"></param> 
+            <param name="xml"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Deserialize``1(System.String)">
+            <summary>
+            Xml反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml">The XML.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Deserialize``1(System.String,``0)">
+            <summary>
+            Xml反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml">The XML.</param>
+            <param name="obj">The object.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Deserialize``1(System.Web.HttpContextBase,``0,System.Boolean)">
+            <summary>
+            Xml反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Context">当前Context</param>
+            <param name="ObjOut">对像格式</param>
+            <param name="WriteLog">是否写Log记录</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Deserialize``1(System.Web.HttpContext,``0,System.Boolean)">
+            <summary>
+            Xml反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Context">当前Context</param>
+            <param name="ObjOut">对像格式</param>
+            <param name="WriteLog">是否写Log记录</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Serializer(System.Type,System.Object,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            序列化XML文件 
+            </summary> 
+            <param name="type">
+            类型
+            <para>一般情况不需要传此值</para>
+            </param> 
+            <param name="obj">对象</param> 
+            <param name="clear">清除多余申明</param>
+            <param name="trim">去掉每行的空格</param>
+            <param name="UseCDATA">使用CDATA方式</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.UseCDataMode(System.String)">
+            <summary>
+            XML使用CDATA模式
+            </summary>
+            <param name="xmlStr">未使用CDATA的XML</param>
+            <returns>返回带CDATA的XML</returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.Serializer(System.Object,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            序列化XML文件 
+            </summary> 
+            <param name="obj">对象</param> 
+            <param name="clear">清除多余申明</param>
+            <param name="trim">去掉每行的空格</param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.FileSerializer(System.String,System.Type,System.Object)">
+            <summary>
+            序列化XML文件
+            </summary>
+            <param name="path"></param>
+            <param name="type"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.XmlAnalysisArray">
+            <summary> 
+            将XML转换为DATATABLE 
+            </summary> 
+            <param name="FileURL"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.XmlAnalysisArray(System.String)">
+            <summary> 
+            将XML转换为DATATABLE 
+            </summary> 
+            <param name="FileURL"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:PDSS.MVC.Utility.XmlUtil.XmlAnalysis(System.String,System.String)">
+            <summary> 
+            摘要:获取对应XML节点的值 
+            </summary> 
+            <param name="stringRoot">XML节点的标记</param> 
+            <returns>返回获取对应XML节点的值</returns> 
+        </member>
+        <member name="T:PDSS.MVC.Utility.SerializableDictionary`2">
+            <summary>
+            支持XML序列化的泛型 Dictionary
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:PDSS.MVC.Utility.SerializableDictionary`2.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            从对象的 XML 表示形式生成该对象
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:PDSS.MVC.Utility.SerializableDictionary`2.WriteXml(System.Xml.XmlWriter)">
+            
+            <summary>
+            将对象转换为其 XML 表示形式
+            </summary>
+            <param name="writer"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,212 @@
+﻿/**应用管理中心 开始**/
+.container {
+    width: 100%;
+    height: 627px;
+    margin:0 auto;
+}
+/**鏈接不到要劃線**/
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+/*控制一行显示两个模块*/
+.app-item {
+    width: 49.5%;
+    float: left;
+    height: auto;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+/*模块居中显示*/
+.app-cell{    
+    width: 500px;
+    height: auto;
+    margin: 0px auto;
+    clear: both; 
+}
+.left_side {
+    width: 100px;
+    height: 100px;
+    margin: 6px 20px 6px 6px;
+    float: left;
+}
+.font-icon-div {
+    font-size: 60px;
+    color: #FFF;
+    text-align: center;
+    line-height: 100px;
+    width: 100px;
+    border-radius: 5px;
+}
+.right_side {
+    width: 360px;
+    margin-top: 7px;
+    margin-left: 4px;
+    float: left;
+}
+
+.instance_title {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.instance_manage {
+    margin: 10px 0px 5px 0px;
+    color: #34588F;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #F0F0F0;
+}
+
+li {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.instance_introduce{
+    padding: 15px 0px;
+    color: #303030;
+    line-height: 100%;
+}
+
+.manage {
+    margin-top: 4px;
+}
+
+/**实例列表**/
+.instance-rows {
+    height: 25px;
+    width: 100%;
+    margin-top: 1px;
+    border: 1px solid #7094CB;
+    line-height:25px;
+    position: relative;
+}
+.instance-rows .inst-name {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 95%;
+    max-width: 290px;
+    overflow: hidden;
+    margin: 0px 5px;
+    line-height: 25px;
+}
+.instance-rows a.inst-name:link, .instance-rows a.inst-name:visited {
+    color: #00F;
+}
+.instance-rows a.inst-name:hover {
+    color: #000;
+}
+.instance-rows .icon {
+    cursor: pointer;
+    width: 30px;
+    text-align: center;
+    float: right;
+    line-height: 25px;
+    background: #FFF;
+}
+.add-instance-rows {
+    border: 1px solid #7094CB;
+    background-color: #7094CB;
+}
+.add-instance-rows a.add_instance:link, .add-instance-rows a.add_instance:visited {
+    width: 100%;
+    margin: 2px;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
+.add-instance-rows a.add_instance:hover {    
+    color: #FF0;
+}
+
+.msg {
+    font-size: 6px;
+    color: #000;
+    font-weight: bold;
+}
+
+
+.normal_table {
+    width: 98%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 25px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+.normal_table .normal_head {
+    line-height: 25px;
+    background: #6B97CB;
+    color: #fff;
+}
+.normal_table td, .normal_table th { /**管理頁面普通表格的加一點內邊距， 這樣省時省心**/
+    padding: 3px;
+}
+.mg-detail-table th {    
+    background: #a1c2ea;
+    color: #23323D;
+    padding: 3px;
+}
+/**应用管理中心 结束**/
+
+/**新增用例 开始**/
+.mg-page-body {    
+    width: 98%;
+    margin: 5px auto;
+}
+
+.div-title {
+    /*margin-left:10px;*/margin-left:100px;    
+    /*margin-top: 30px;*/margin-top:20px;
+}
+
+.span-title {
+    color: #000;
+    font-weight: bold;
+    /*font-size: 16px;*/font-size:20px;
+}
+
+.div-app {
+    margin-top: 30px;
+}
+
+.tab-content {
+    width:100%;
+    font-size: 12px;
+    line-height: 30px;
+}
+.tab-td-left {
+/*width:20%;*/
+width:18%;
+text-align:right;
+}
+.tab-td-appmodule_name{
+    font-weight:bold;
+}
+.tab-td-serviceno_uid{
+    font-weight:bold;
+}
+.tab-td-right {
+    width:80%;
+text-align:left;
+}
+    .tab-td-right label {
+        font-weight:bold;
+    }
+.sp-attribute-config {
+ color: #000;
+    font-weight: bold;
+    font-size: 12px;
+}
+/**新增用例 结束**/

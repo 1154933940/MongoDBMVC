@@ -1,0 +1,62 @@
+﻿@using CivetHR.UserAPI
+@using Webdiyer.WebControls.Mvc
+@using CivetUserAPIMg.Models
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_7";
+    List<ModUApiFieldList> mfdlist = ViewBag.ModUApiFieldList;
+    List<ModUApiInterfaceList> mglist = ViewBag.ModUApiInterfaceList;
+}
+
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px;">
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="border-left: #007acc 5px solid; width: 100%">
+        <h2>接口列表</h2>
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>接口名称</th>
+                <th>接口说明</th>
+            </tr>
+            @if (mglist != null && mglist.Count > 0)
+            {
+                foreach (var item in mglist)
+                {
+                <tr>
+                    <td>@item._id</td>
+                    <td>@item.name</td>
+                </tr>      
+                }
+            }
+        </tbody>
+    </table>
+    <div style="border-left: #007acc 5px solid; width: 100%">
+        <h2>栏位列表</h2>
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>栏位名称</th>
+                <th>栏位说明</th>
+                <th>是否必要</th>
+            </tr>
+            @if (mfdlist != null && mfdlist.Count > 0)
+            {
+                foreach (var item in mfdlist)
+                {
+                <tr>
+                    <td>@item._id</td>
+                    <td>@item.remark</td>
+                    <td>@item.is_required</td>
+                </tr>      
+                }
+            }
+        </tbody>
+    </table>
+</div>

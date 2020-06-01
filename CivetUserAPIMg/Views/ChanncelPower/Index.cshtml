@@ -1,0 +1,102 @@
+﻿@model PagedList<ModChanncelList>
+@using CivetHR.UserAPI
+@using Webdiyer.WebControls.Mvc
+@using CivetUserAPIMg.Models
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_6";
+}
+
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px;">
+        <h3>生活频道用户权限</h3>
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center">
+        @using (Html.BeginForm("Index", "ChanncelPower", FormMethod.Get))
+        { 
+            <label>
+                频道帐号:<input  type="text" name="serviceno_uid" value="@ViewBag.SearchCondition.serviceno_uid"/>&nbsp
+                香信号/香信号名称:<input type="text" name="civetno" value="@ViewBag.SearchCondition.civetno" />
+                <input type="submit" class="btn-s" style="overflow: visible;" value="搜索">
+            </label>
+        }
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th rowspan="2">频道帐号</th>
+                <th rowspan="2">负责人工号</th>
+                <th rowspan="2">负责人姓名</th>
+                <th rowspan="2">手机</th>
+                <th colspan="2">使用次数</th>
+                <th rowspan="2">操作</th>
+            </tr>
+            <tr class="normal_head">
+                <th>本月</th>
+                <th>总计</th>
+            </tr>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item._id</td>
+                    <td>@item.civetno</td>
+                    <td>@item.user_name</td>
+                    <td>
+                        @item.mobile
+                    </td>
+                    <td>
+                        @item.MonthlyNum
+                    </td>
+                    <td>
+                        @item.TotalNum
+                    </td>
+                    <td>
+                        <a class="btn-s" href="javascript:void(0);" openurl="@Url.Action("PowerListDetail", "ChanncelPower", new { id = item._id })"
+                   opentitle="@Html.Lang("查看")" openproperty="{usebutton:false, width: '800px',height:'450px'}" style="margin-left: 10px;">@Html.Lang("查看")</a>
+                    </td>
+                </tr>      
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <div class="pagescount">
+        <div class="pagelength">頁碼 @Model.CurrentPageIndex/@Model.TotalPageCount  記錄數 @Model.TotalItemCount</div>
+        <div class="pageindex">
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", ShowPageIndexBox = true, PageIndexBoxType = PageIndexBoxType.DropDownList, ShowGoButton = false })
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .pagescount {
+        width: 95%;
+        height: 60px;
+        padding: 0px 20px;
+    }
+
+    .pagelength {
+        width: 20%;
+        float: left;
+        height: 50%;
+        line-height: 30px;
+    }
+
+    .pageindex {
+        float: right;
+    }
+</style>
+@section Page_End_Scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+}
+<script type="text/javascript">
+
+</script>
+

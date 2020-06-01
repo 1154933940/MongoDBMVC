@@ -1,0 +1,109 @@
+﻿@model PagedList<ModUApiUseLogFind>
+@using Webdiyer.WebControls.Mvc
+@using CivetHR.UserAPI
+@using CivetUserAPIMg.Models
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_3";
+}
+
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px">
+        <h3>接口统计次数详情</h3>
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center">
+        @using (Html.BeginForm("Detail", "Counter", FormMethod.Get))
+        { 
+            <label>
+                频道账号:<input type="text" name="serviceno_uid" value="@ViewBag.seeAboutModel.serviceno_uid" />
+                访问时间:                   
+                <input type="text" id="visited_time" name="visited_time"  value="@ViewBag.seeAboutModel.visited_time"/>
+                <input type="submit" class="btn-s" style="overflow: visible;" value="搜索">
+                <input  type="hidden"  name="code" value="@ViewBag.Code"/>
+            </label>
+        }
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>接口名称</th>
+                <th>频道账号</th>
+                <th>参数</th>
+                <th>访问时间</th>
+                <th>访问IP</th>
+            </tr>
+            @if (Model != null && Model.Count > 0)
+            {
+                int i = 0;
+                foreach (var item in Model)
+                {
+                    i++;
+                <tr>
+                    <td>@item.interface_code</td>
+                    <td>@item.serviceno_uid</td>
+                    <td>
+                        <input type="button" class="btn-s" id="data_@i" onclick="outspread('@i    ')" style="overflow: visible;" value="展开">
+                        <div id="dataone_@i" style="display: none;">@item.request_data</div>
+                        <input type="button" class="btn-s" id="datatwo_@i" onclick="paid('@i    ')" style="overflow: visible;display:none;background:#808080" value="收起">
+                    </td>
+                    <td>@Util.FormatTime(item.visited_time)</td>
+                    <td>
+                        @item.visited_ip
+                    </td>
+                </tr>      
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <div class="pagescount">
+        <div class="pagelength">頁碼 @Model.CurrentPageIndex/@Model.TotalPageCount  記錄數 @Model.TotalItemCount</div>
+        <div class="pageindex">
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", ShowPageIndexBox = true, PageIndexBoxType = PageIndexBoxType.DropDownList, ShowGoButton = false })
+        </div>
+    </div>
+</div>
+<script language="javascript">
+    window.onload = function () {
+        document.getElementById('visited_time').onfocus = function () { WdatePicker({ readOnly: true, dateFmt: 'yyyy-MM-dd' }) };
+    };
+
+    function outspread(obj) {
+        $("#dataone_"+(obj)).show();
+        $("#data_"+(obj)).hide();
+        $("#datatwo_"+(obj)).show();
+    }
+    function paid(obj)
+    {
+        $("#dataone_"+(obj)).hide();
+        $("#data_"+(obj)).show();
+        $("#datatwo_"+(obj)).hide();
+    }
+</script>
+<style type="text/css">
+    .pagescount {
+        width: 95%;
+        height: 60px;
+        padding: 0px 20px;
+    }
+
+    .pagelength {
+        width: 20%;
+        float: left;
+        height: 50%;
+        line-height: 30px;
+    }
+
+    .pageindex {
+        float: right;
+    }
+</style>
+@section Page_End_Scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+}

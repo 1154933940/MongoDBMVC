@@ -1,0 +1,153 @@
+﻿@using CivetHR.UserAPI
+@using MongoDB.Bson;
+@model ModUApiUseLogFind
+@{
+    ViewBag.headIndex = "hi_3";
+    List<BsonDocument> BsonDocumentlist = (List<BsonDocument>)ViewBag.BsonDocumentlist;
+    List<ModUApiInterfaceList> uapinterlist = (List<ModUApiInterfaceList>)ViewBag.ModUApiInterfaceList;
+}
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px">
+        <h3>接口统计次数</h3>
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center">
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>接口名称</th>
+                <th>总调用次数</th>
+                <th>本月调用次数</th>
+                <th>今日调用次数</th>
+                <th>操作</th>
+            </tr>
+            @if (BsonDocumentlist != null && BsonDocumentlist.Count > 0)
+            {
+                decimal totalNum = 0;
+                decimal totalMonthlyNum = 0;
+                decimal totalTodayNum = 0;
+                foreach (var item in BsonDocumentlist)
+                {
+                <tr>
+                    @{
+                    string Titlecodname = "";
+                    if (uapinterlist != null && uapinterlist.Count > 0)
+                    {
+                        Titlecodname = (from m in uapinterlist
+                                        where m._id == item["_id"].ToString()
+                                        select m).FirstOrDefault().name;
+                    }
+                    totalNum += item["TotalNum"].AsInt32;
+                    totalMonthlyNum += item["MonthlyNum"].AsInt32;
+                    totalTodayNum += item["TodayNum"].AsInt32; 
+                    }
+                    <td title="@Titlecodname">@item["_id"].ToString()</td>
+                    <td>@item["TotalNum"].ToString()</td>
+                    <td>
+                        @item["MonthlyNum"].ToString()
+                    </td>
+                    <td>@item["TodayNum"].ToString()</td>
+                    <td style="color: #6B97CB; cursor: pointer;">
+                        <a href="@Url.Action("Detail", "Counter", new { code = item["_id"].ToString() })">详情</a>
+                    </td>
+                </tr>      
+                }
+                <tr>
+                    <td>合计
+                    </td>
+                    <td>@totalNum</td>
+                    <td>@totalMonthlyNum</td>
+                    <td>@totalTodayNum</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+</div>
+<div style="margin: 15px">
+    @using (Html.BeginForm())
+    { 
+        <select onchange='javascript:document.forms[0].submit();' name="interface_code">
+            @if (BsonDocumentlist != null && BsonDocumentlist.Count > 0)
+            {
+                foreach (var item in BsonDocumentlist)
+                {
+                <option value="@item["_id"].ToString()">@item["_id"].ToString()</option>
+                }
+            }
+        </select>
+    }
+</div>
+<div id="container">
+</div>
+<script src="http://civetinterface.foxconn.com/JsLib/HighCharts/highcharts.js"></script>
+<script src="http://civetinterface.foxconn.com/JsLib/HighCharts/exporting.js"></script>
+<script>
+    $("select[name='interface_code']").val('@ViewBag.interfacecode');
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: '@ViewBag.interfacecode'
+            },
+
+            xAxis: {
+                title: {
+                    text: '调用日期'
+                },
+
+                categories: [@ViewBag.Date],
+
+                labels: {
+                    step: 1
+                }
+            },
+            yAxis: {
+                title: {
+                    text: '调用次数'
+                },
+                labels: {
+                    formatter: function () {
+                        return '{0}'.replace("{0}", this.value);
+                    }
+                },
+                allowDecimals: false,
+                min: 0
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: { 
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
+            series: [{  
+
+                name: '最近一周',
+                marker: {
+
+                    symbol: 'square'
+                },
+
+                data: [@ViewBag.Amount]
+
+            }]
+        });
+    });
+</script>
+

@@ -1,0 +1,94 @@
+﻿@model ModUApiManager
+@using CivetHR.UserAPI
+@using Webdiyer.WebControls.Mvc
+@using CivetUserAPIMg.Models
+@{
+    ViewBag.headIndex = "hi_5";
+    string title = "修改管理账号";
+    bool status = false;
+    string vlue = "";
+    string btn_vlue = "修改";
+    if (TempData["Mgs"] == "1")
+    {
+        btn_vlue = "新增";
+        vlue = "1";
+        status = true;
+        title = "新增管理账号";
+    }
+}
+
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px;">
+         <h3>@title</h3>
+    </div>
+</div>
+<div>
+    @using (Html.BeginForm("AddUpdateSave", "AccountManage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    { 
+        <input  type="hidden" value="@vlue" name="status_name"/>
+        if (status)
+        {
+        <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td>香信号</td>
+                    <td>@Html.TextBoxFor(m => m._id)</td>
+                </tr>
+                <tr>
+                    <td>香信号名称</td>
+                    <td>@Html.TextBoxFor(m => m.user_name)</td>
+                </tr>
+                <tr>
+                    <td>是否失效</td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.is_disabled, true) 是
+                        @Html.RadioButtonFor(m => m.is_disabled, false) 否
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        }
+        else
+        {
+        <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td>香信号</td>
+                    <td>
+                        @Html.TextBoxFor(m => m._id, new { @disabled = true })
+                        <input type="hidden" name="_id"  value="@Model._id" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>香信号名称</td>
+                    <td>@Html.TextBoxFor(m => m.user_name)</td>
+                </tr>
+                <tr>
+                    <td>是否失效</td>
+                    <td>
+                        @if (Model.is_disabled)
+                        {
+                            <label>@Html.RadioButtonFor(m => m.is_disabled, true, new { @checked = "checked" }) 是 </label>
+                            <label>@Html.RadioButtonFor(m => m.is_disabled, false)  否</label>
+                        }
+                        else
+                        {
+                            <label>@Html.RadioButtonFor(m => m.is_disabled, true) 是 </label>
+                            <label>@Html.RadioButtonFor(m => m.is_disabled, false, new { @checked = "checked" }) 否</label>
+                        }
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+        }
+        <div style="text-align: center">
+            <input class="btn-s" value="@btn_vlue" type="submit" />
+            <a class="btn-s" href="@Url.Action("Index", "AccountManage")">返回</a>
+        </div>
+    }
+</div>

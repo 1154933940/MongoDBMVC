@@ -1,0 +1,105 @@
+﻿@model PagedList<ModUApiUseLogFind>
+@using CivetHR.UserAPI
+@using Webdiyer.WebControls.Mvc
+@using CivetUserAPIMg.Models
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_4";
+}
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px;">
+        <h3>频道号调用日志</h3>
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center">
+        @using (Html.BeginForm("Index", "DownCount", FormMethod.Get))
+        { 
+            <label>
+                频道账号：
+                <input type="text"  name="serviceno_uid"  value="@ViewBag.SearchCondtion.serviceno_uid"/>
+                访问时间： 
+                <input type="text"  id="visited_time" name="visited_time"  value="@ViewBag.SearchCondtion.visited_time"/>
+                <input type="submit" class="btn-s" style="overflow: visible;" value="查询">
+                <input type="button" class="btn-s" style="overflow: visible;" value="下载" onclick="downToExcel()">
+            </label>
+        }
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>频道账号</th>
+                <th>接口名称</th>
+                <th>参数</th>
+                <th>访问时间</th>
+                <th>访问IP</th>
+            </tr>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.serviceno_uid</td>
+                    <td>@item.interface_code</td>
+                    <td style="max-width: 200px;">@item.request_data</td>
+                    <td>@Util.FormatTime(item.visited_time)</td>
+                    <td>@item.visited_ip</td>
+                </tr>      
+                }
+                <tr>
+                    <td colspan="2">
+                       @(string.IsNullOrEmpty(ViewBag.ServicenoUidName)?"":"("+ViewBag.ServicenoUidName+")") 合计: @ViewBag.TotalCount</td>
+                    <td>本月调用次数: @ViewBag.TheMonth</td>
+                    <td colspan="2">今日调用次数: @ViewBag.Thetoday</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <div class="pagescount">
+        <div class="pagelength">頁碼 @Model.CurrentPageIndex/@Model.TotalPageCount  記錄數 @Model.TotalItemCount</div>
+        <div class="pageindex">
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", ShowPageIndexBox = true, PageIndexBoxType = PageIndexBoxType.DropDownList, ShowGoButton = false })
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById('visited_time').onfocus = function () { WdatePicker({ readOnly: true, dateFmt: 'yyyy-MM-dd' }) };
+    };
+    function downToExcel() {
+        var s = $("input[name='serviceno_uid']").val();
+        var v = $("input[name='visited_time']").val();
+        window.location.href = "@Url.Action("ToExcel", "DownCount")?servicenouid=" + s + "&visitedtime=" + v + "";
+    }
+</script>
+<style type="text/css">
+    .pagescount {
+        width: 95%;
+        height: 60px;
+        padding: 0px 20px;
+    }
+
+    .pagelength {
+        width: 20%;
+        float: left;
+        height: 50%;
+        line-height: 30px;
+    }
+
+    .pageindex {
+        float: right;
+    }
+
+    table tr td {
+        word-wrap: break-word;
+    }
+</style>
+@section Page_End_Scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+}

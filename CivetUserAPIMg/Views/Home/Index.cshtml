@@ -1,0 +1,10 @@
+﻿@{
+
+}
+<h1>欢迎您使用</h1>
+<div style="width: 100%; text-align: center; height: 200px;">
+    @if (string.IsNullOrEmpty(CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.civetno))
+    { 
+        <a class="btn-s" href="@Url.Action("Index", "InterfaceApply")" style="width:70%;margin-top:10px">管理员登录</a>
+    }
+</div>

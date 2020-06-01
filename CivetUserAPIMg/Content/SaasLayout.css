@@ -1,0 +1,251 @@
+﻿body {
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+.saas-header {
+    width: 100%;
+}
+
+.saas-header-first {
+    margin: 0 auto;
+    position: relative;
+    background-color: #5982c2;
+    width: 100%;
+    height: 70px;
+    min-width: 700px;
+}
+
+.first_title { /*头部标题*/
+    width: 50%;
+    font-size: 30px;
+    padding: 3px;
+    color: #ffffff;
+    float: left;
+    font-family: SimHei;
+    min-width: 200px;
+    line-height: 70px;
+}
+
+.first_icon { /*头部包含头像和个人信息*/
+    width: 270px;
+    float: right;
+    color: #ffffff;
+    font-size: 15px;
+    min-width: 140px;
+}
+.first_icon_url { /*头像*/
+    width: 17%;
+    float: left;
+    margin: 3px;
+    min-width: 60px;
+    min-height: 60px;
+}
+.first_icon_url img {    
+    width:60px;
+    height:60px;
+    border-radius: 20px;
+}
+
+.first_icon_text { /*个人信息*/
+    width: 70%;
+    min-width: 250px;
+    font-size: 15px;
+    line-height: 40px;
+}
+
+/********************************************************
+   鼠标移动显示的DIV
+*********************************************************/
+
+.showhidediv {
+    position: absolute;
+    display: none;
+    width: 300px;
+    background: #ffffff;
+}
+
+.showhidediv_onediv {
+    border: 0px none;
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 微软雅黑;
+}
+
+.main {
+    /*border: 3px solid #5982c2;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0px;*/
+}
+.main2 {
+    border: 1px solid #5982c2; padding: 15px; text-align: center; color: inherit; box-sizing: border-box; margin: 0px;
+}
+.main3 {
+    color: inherit; font-size: 12px; border-color: rgb(0,187,236); box-sizing: border-box; padding: 0px; margin-top: 0px; margin-bottom: 0px;
+}
+/********************************************************
+   鼠标移动显示的DIV
+*********************************************************/
+
+.saas-header-info {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.saas-navigator {
+    position: absolute;
+    width: 100%;
+}
+
+    .saas-navigator .saas-nav-items {
+        width: 1000px;
+        height: 40px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        margin: 0 auto;
+        z-index: 100;
+    }
+
+    .saas-navigator .saas-nav-bg {
+        width: 100%;
+        height: 38px;
+        position: absolute;
+        top: 1px;
+        left: 0px;
+        z-index: 1;
+        background-color: #31598C;
+        color: #FFF;
+    }
+
+    .saas-navigator .saas-nav-div {
+        height: 40px;
+        width: 135px;
+        float: left;
+        margin-right: 30px;
+        margin-left: 3px;
+    }
+
+        .saas-navigator .saas-nav-div a {
+            margin-left: 2px;
+            height: 40px;
+            line-height: 40px;
+            width: 130px;
+            color: #FFF;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: SimSun;
+        }
+
+    .saas-navigator .on {
+        margin-left: 0px;
+        border-left: 3px #6B97CB solid;
+    }
+
+        .saas-navigator .on a {
+            background-color: #6B97CB;
+        }
+
+    .saas-navigator .saas-nav-div:hover {
+        margin-left: 0px;
+        border-left: 3px #AEC7E3 solid;
+    }
+
+        .saas-navigator .saas-nav-div:hover a {
+            background-color: #AEC7E3;
+            color: #31598C;
+        }
+
+.appmodule_name_show {
+    font-size: 14px;
+    color: #31598c;
+    margin: 7px 1px;
+    margin-top: 9px;
+}
+
+.instance_name_show {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main_body_show {
+    overflow: hidden;  
+    min-height: 750px;
+    background: #ffffff;
+    border: 1px solid #DEDFDE;
+}
+
+.foot_mang {
+    margin: 10px;
+    float: right;
+    width: 100%;
+}
+
+.foot_mangone {
+    margin: 0 auto;
+    width: 900px;
+    text-align: center;
+    padding: 15px;
+    min-width: 700px;
+}
+
+/*遮罩层样式*/
+#cover {
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    display: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #000;
+}
+/********************************************************
+   菜单栏样式
+*********************************************************/
+.div_css_pitchon_none {
+    min-width: 100px;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 16px 0 37px;
+    background: #EFEFEF;
+    font-size: 15px;
+    border-top: 1px solid #DEDFDE;
+    border-bottom: 1px solid #DEDFDE;
+}
+
+    .div_css_pitchon_none a {
+        color: #000;
+    }
+
+.menu_leftBigdiv { /*中间位置包含菜单和主要显示数据的DIV*/
+    width: 100%;
+    min-width: 700px;
+    margin: 5px auto;
+    float: left;
+}
+
+.div_css_pitchon a { /*选中的菜单栏*/
+    color: #ffffff;
+}
+
+.div_css_pitchon { /*选中的菜单栏*/
+    min-width: 100px;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 16px 0 37px;
+    background: #5982C2;
+    font-size: 15px;
+    border-top: 1px solid #DEDFDE;
+    border-bottom: 1px solid #DEDFDE;
+    color: #ffffff;
+}
+/********************************************************
+   菜单栏样式
+*********************************************************/

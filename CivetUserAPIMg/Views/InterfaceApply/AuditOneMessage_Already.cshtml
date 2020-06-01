@@ -1,0 +1,223 @@
+﻿@model ModUApiPowerAplictionFind
+@using CivetHR.UserAPI
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_2";
+    List<ModUApiInterfaceList> uapiinter = (List<ModUApiInterfaceList>)ViewBag.uapi_interface_list;
+    List<ModUApiFieldList> uapifield = (List<ModUApiFieldList>)ViewBag.uapi_field_list;
+}
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px">
+    </div>
+</div>
+<br />
+<br />
+<table class="normal_table" border="0" cellpadding="0" cellspacing="0" width="700" align="center">
+    <tr>
+        <td height="26" valign="middle" align="left">
+            <img src="@Url.Content(Util.GetDir() + "Content/images/Honhai.gif")" /></td>
+        <td height="26" style="font-size: 15px; font-weight: bold;"
+            valign="middle" align="right">工管系统资讯处</td>
+    </tr>
+    <tr>
+        <td align="center" colspan="2" height="35"
+            style="font-size: 15px; font-weight: bold;" valign="middle">香信人事资料调用申请单 
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0px; font-size: 11px;" colspan="2" align="right">数据版本:@CUtil.CDate(Model.appliction_time).ToString("yyMMddHHmmss")
+        </td>
+    </tr>
+</table>
+<table class="normal_table" border="0" cellpadding="0" cellspacing="0" width="700" align="center">
+    <tr>
+        <td height="26" style="font-size: 15px;" align="center">■新增 □无 ▲原有  ×删除
+        </td>
+    </tr>
+</table>
+<table class="normal_table" width="700" align="center" border="1" style="border-collapse: collapse; font-size: 12px" cellpadding="2" cellspacing="0" bordercolor="#000000">
+    <tr>
+        <td rowspan="3" width="20" align="center">申请人资料</td>
+        <td align="center" width="80">香信生活频道账号</td>
+        <td width="100">@Model.serviceno_uid</td>
+        <td align="center" width="80">申请人</td>
+        <td width="170">@Model.user_name</td>
+        <td align="center" width="80">工 号</td>
+        <td width="170">@Model.civetno</td>
+
+    </tr>
+    <tr>
+        <td width="80" align="center">申请日期</td>
+        <td width="170">@Util.FormatTime(Model.appliction_time)</td>
+        <td align="center">事业群</td>
+        <td>@Model.bg_name</td>
+        <td align="center">事业处</td>
+        <td>@Model.bu_name</td>
+    </tr>
+    <tr>
+        <td align="center">费用代码</td>
+        <td>@Model.cost_code</td>
+        <td align="center">手 机</td>
+        <td>@Model.mobile</td>
+        <td align="center">分 机</td>
+        <td>@Model.ext_phone</td>
+    </tr>
+</table>
+<table class="normal_table" width="700" align="center" border="1" style="border-collapse: collapse; border-top: 0px; font-size: 12px;" cellpadding="2" cellspacing="0" bordercolor="#000000">
+    <tr height="25">
+
+        <td rowspan="4" width="20" align="center">申请相关信息</td>
+
+        <td width="120" align="center">接口名称</td>
+        <td colspan="" align="left">
+            @if (uapiinter != null && uapiinter.Count > 0)
+            {
+                foreach (var item in uapiinter)
+                {
+                    string stat = "□";
+                    if (Model.interfaces != null && Model.interfaces.Length > 0 && !string.IsNullOrEmpty(Model.interfaces[0]))
+                    {
+                        for (int i = 0; i < Model.interfaces.Length; i++)
+                        {
+                            if (Model.interfaces[i].Contains(item._id))
+                            {
+                                stat = "▲";
+                                break;
+                            }
+                        }
+                    }
+                    if (Model.add_interfaces != null && Model.add_interfaces.Length > 0 && !string.IsNullOrEmpty(Model.add_interfaces[0]))
+                    {
+                        for (int i = 0; i < Model.add_interfaces.Length; i++)
+                        {
+                            if (Model.add_interfaces[i].Contains(item._id))
+                            {
+                                stat = "■";
+                                break;
+                            }
+                        }
+                    }
+                    if (Model.remove_interfaces != null && Model.remove_interfaces.Length > 0 && !string.IsNullOrEmpty(Model.remove_interfaces[0]))
+                    {
+                        for (int i = 0; i < Model.remove_interfaces.Length; i++)
+                        {
+                            if (Model.remove_interfaces[i].Contains(item._id))
+                            {
+                                stat = "×";
+                                break;
+                            }
+                        }
+                    }
+                <div style="width: 40%; float: left">
+                    @Html.Lang(stat + item.name)
+                </div>
+                }
+            }
+
+        </td>
+
+    </tr>
+    <tr height="25">
+        <td width="120" align="center">栏位名称</td>
+        <td align="left">
+            @if (uapifield != null && uapifield.Count > 0)
+            {
+                foreach (var item in uapifield)
+                {
+                    string stat = "□";
+                    if (Model.fields != null && Model.fields.Length > 0 && !string.IsNullOrEmpty(Model.fields[0]))
+                    {
+                        for (int i = 0; i < Model.fields.Length; i++)
+                        {
+                            if (Model.fields[i].Contains(item._id))
+                            {
+                                stat = "▲";
+                                break;
+                            }
+                        }
+                    }
+                    if (Model.add_fields != null && Model.add_fields.Length > 0 && !string.IsNullOrEmpty(Model.add_fields[0]))
+                    {
+                        for (int i = 0; i < Model.add_fields.Length; i++)
+                        {
+                            if (Model.add_fields[i].Contains(item._id))
+                            {
+                                stat = "■";
+                                break;
+                            }
+                        }
+                    }
+                    if (Model.remove_fields != null && Model.remove_fields.Length > 0 && !string.IsNullOrEmpty(Model.remove_fields[0]))
+                    {
+                        for (int i = 0; i < Model.remove_fields.Length; i++)
+                        {
+                            if (Model.remove_fields[i].Contains(item._id))
+                            {
+                                stat = "×";
+                                break;
+                            }
+                        }
+                    }
+                <div style="width: 19%; float: left">
+                    @Html.Lang(stat + item.remark)
+                </div>
+                }
+            }
+        </td>
+    </tr>
+    <tr height="40">
+        <td align="center">具体用途描述</td>
+        <td colspan="3">
+            @if (string.IsNullOrEmpty(Model.apply_reason))
+            {
+                <label style="color: Red">
+                    没有写
+                </label>
+            }
+            else
+            {
+                <label>
+                    @Html.Raw(Model.apply_reason)
+                </label>
+            }</td>
+    </tr>
+</table>
+<table class="normal_table" width="700" align="center" border="1" style="border-collapse: collapse; border-top: 0px; font-size: 12px;" cellpadding="2" cellspacing="0" bordercolor="#000000">
+
+    <tr height="30">
+        <td rowspan="2">上传的文件（申请单签核档）</td>
+        <td>
+            @if (!string.IsNullOrEmpty(Model.application_url))
+            {
+                <a href="@Model.application_url" target="_blank" style="color:Blue;">
+                    @Model.application_url
+                </a>             
+            }
+            else
+            {
+                <span style="color: Red;">暂未上传签核档，无法审核！</span>
+            }
+        </td>
+    </tr>
+</table>
+<table class="normal_table" width="700" align="center" border="1" style="border-collapse: collapse; border-top: 0px; font-size: 12px;" cellpadding="2" cellspacing="0" bordercolor="#000000">
+    <tr height="30">
+        <td align="center">审核人资料</td>
+        <td>审核人: @Model.audit_civet_no</td>
+        <td>审核时间:@Util.FormatTime(Model.audit_time)</td>
+        <td>审核状态： @Model.status</td>
+    </tr>
+</table>
+<br />
+<div style="width: 100%; text-align: center">
+    <input class="btn-s" type="button" value="修改" id="change_info" />
+    <a href="@Url.Action("index_already", "InterfaceApply")" class="btn-s" >返回</a>
+</div>
+<script type="text/javascript">
+    $("#change_info").bind("click",
+        function () {
+            var openurl = '@Url.Action("UpdateInfo", "InterfaceApply", new { id = Model._id })';
+            _dialog({ src: openurl, title: "@Html.Lang("修改信息")", width: 530, height: 490, usebutton: false }).show();
+        }
+            );
+</script>

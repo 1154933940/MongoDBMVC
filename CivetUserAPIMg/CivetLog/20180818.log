@@ -1,0 +1,6 @@
+﻿16:25:13.085
+http://qacivetinterface.foxconn.com/Open/get_user_info_bycode?appid=72weojkeRm09AG1umrN4vA2&code=C4FDCNhslcYgk3cug44AOD.0.M-hQJUcEeBTnhUezz.1aWxQ&NSDK_2.180604
+GET
+
+执行结果：{"openid":"ZjMyMzIwNDF8YWUzMzI1","is_subscriber":0,"from_pc":1,"civetno":"f3232041","realname":"邱喜威","sex":"男","nickname":"不會游泳的魚","area":"贝宁","sign":"这只是个开始","icon":"http://qaicivetmedia.foxconn.com/group2/M01/00/6B/CoZiPVX70X-EXooLAAAAAA0471M39.jpeg","serviceno":"Civet_UserAPIMg","support_civet_no":null,"hrtype":"","unit":"富士康科技集团","bg":"總部周邊","bu":"工管資訊","grade":"","grade_depart":"","access_token":"MVkIxwThk9%2bKXj6EZZ14FA%3d%3d","expires_in":3599}
+=============================================

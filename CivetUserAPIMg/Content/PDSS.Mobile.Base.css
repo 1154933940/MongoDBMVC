@@ -1,0 +1,11 @@
+﻿input[type="text"], input[type="button"], input[type="submit"], button {
+    -webkit-appearance : none;  /*解决iphone safari上的圆角问题*/
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-family:SimSun;
+    background-color: #EEEEEE;
+}

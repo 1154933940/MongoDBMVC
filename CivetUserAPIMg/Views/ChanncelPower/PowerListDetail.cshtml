@@ -1,0 +1,120 @@
+﻿@model ModUApiPowerList
+@using CivetHR.UserAPI
+@using PDSS.MVC.Utility
+@{
+    Layout = null;
+}
+<link href="~/Content/CivetPublicSaaSSys-01.base.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<link href="~/Content/CivetPublicSaaSSys-02.home.css" rel="stylesheet" />
+<div class="row" style="padding: 20px 25px 20px 25px; position: relative;">
+    <input type="hidden" value="@Model._id" name="id" />
+    <br />
+    <fieldset>
+        <legend>@Html.Lang("基本资料")</legend>
+        <br />
+        <table style="width: 100%" border="1" class="normal_table" cellpadding="0" cellspacing="">
+            <tbody>
+                <tr>
+                    <td>@Html.Lang("频道账号")</td>
+                    <td>
+                        @Model._id
+                    </td>
+                    <td>@Html.Lang("事业群")</td>
+                    <td>
+                        @Model.bg_name
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("事业处")</td>
+                    <td>
+                        @Model.bu_name
+                    </td>
+                    <td>部门</td>
+                    <td>@Model.dept_name</td>
+                </tr>
+                <tr>
+                    <td>负责人工号</td>
+                    <td>@Model.civetno</td>
+                    <td>@Html.Lang("负责人姓名")</td>
+                    <td>
+                        @Model.user_name
+                    </td>
+                </tr>
+                <tr>
+                    <td>费用代码</td>
+                    <td>@Model.cost_code</td>
+                    <td>@Html.Lang("负责人手机")</td>
+                    <td>
+                        @Model.mobile
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Lang("负责人分机")</td>
+                    <td>
+                        @Model.ext_phone
+                    </td>
+                    <td>每月使用次数</td>
+                    <td>@Model.limit_monthly_count</td>
+                </tr>
+                <tr>
+                    <td>开始日期</td>
+                    <td>@Util.FormatTime(Model.start_date)</td>
+                    <td>结束日期</td>
+                    <td>@Util.FormatTime(Model.end_date)</td>
+                </tr>
+                <tr>
+                    <td>可用接口</td>
+                    <td style="max-width: 200px;">
+                        @{              string interfaces = "";
+                                        if (Model.interfaces != null && Model.interfaces.Count() > 0)
+                                        {
+
+                                            foreach (var item in Model.interfaces)
+                                            {
+                                                interfaces += "," + item;
+                                            }
+                                            interfaces = interfaces.TrimStart(',');
+
+                                        }
+                        }
+                        @interfaces
+                    </td>
+                    <td>可用栏位</td>
+                    <td style="max-width: 200px;">
+                        @{              string fields = "";
+                                        if (Model.fields != null && Model.fields.Count() > 0)
+                                        {
+
+                                            foreach (var item in Model.fields)
+                                            {
+                                                fields += "," + item;
+                                            }
+                                            fields = fields.TrimStart(',');
+
+                                        }
+                        }
+                        @fields
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <br />
+    <div style="width: 100%; text-align: center">
+        <a class="btn-m" id="colse_dialog">关闭</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#colse_dialog").click(function () {
+        window.parent._close_dialog();
+    })
+</script>
+<style type="text/css">
+        table tr td {
+        word-wrap: break-word;
+    }
+</style>

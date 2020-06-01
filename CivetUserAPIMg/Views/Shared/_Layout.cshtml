@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base/jquery.ui.all.css")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/CivetUserAPIMg")
+    <script src="http://civetinterface.foxconn.com/JsLib/My97DatePicker/WdatePicker.js"></script>
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        function show(obj, id) {
+            var objDiv = $("#" + id + "");
+            $(objDiv).css("display", "block");
+            $(objDiv).css("left", event.clientX);
+            $(objDiv).css("top", event.clientY + 10);
+        }
+        function hide(obj, id) {
+            var objDiv = $("#" + id + "");
+            $(objDiv).css("display", "none");
+        }
+    </script>
+</head>
+<body>
+    <div class="saas-header">
+        <div class="saas-header-first">
+            <div class="first_title">
+                <label>香信集团员工数据服务</label>
+            </div>
+            <div class="first_icon">
+                <div class="first_icon_url">
+                    @{
+                        string imgurl = "http://civetpublic.foxconn.com/Content/images/user_icon.png";
+                        if (CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.icon != null && !string.IsNullOrEmpty(CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.icon))
+                        {
+                            imgurl = CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.icon;
+                        }
+                    }
+                    <img src="@imgurl" onmousemove="javascript:show(this,'showhidediv');" onmouseout="hide(this,'showhidediv')"/>
+                </div>
+     @*           <div class="showhidediv" id="showhidediv">
+                    <div class="showhidediv_onediv">
+                        <div class="main">
+                            <div class="main2">
+                                <p class="main3">
+                                    <span class="main4" style="font-family: arial; border-color: rgb(0,187,236); color: #000000; box-sizing: border-box; padding: 0px; margin: 0px;">工号: @CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.civetno
+
+                                    </span>
+                                </p>
+                                <p class="main5" style="color: inherit; border-color: rgb(0,187,236); box-sizing: border-box; padding: 0px; margin-top: 0px; margin-bottom: 0px;">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+                <div class="first_icon_text">
+                    @if (!string.IsNullOrEmpty(CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.civetno))
+                    {  
+                        <label style="font-size: 15px;">用户：     @CivetUserAPIMg.Controllers.UtilComm.UApi_Manager.user_name</label>
+                    }
+                    else
+                    {
+                        <label><a href="@Url.Action("Index", "InterfaceApply")" style="color: #ff0000">请登录......</a></label>
+                    }
+                    <label>
+                        @if (!string.IsNullOrEmpty(CivetUserAPIMg.Controllers.UtilComm.UserInfo.BaseInfo.civetno))
+                        {  
+                            <text>  |</text>     <a href="@Url.Action("LoginOut", "Home")" style="font-size:15px;color:#ffffff" title="退出当前系统">登出</a>
+                        }
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="menu_leftBigdiv">
+            <div style="width: 180px; float: left;">
+                <!--左边-->
+                <div class="@(ViewBag.headIndex == "hi_1" ? "div_css_pitchon" : "div_css_pitchon_none")" style="">
+                    <a href="@Url.Action("Index", "InterfaceApply")">待审核申请单</a>
+                </div>
+                <div class="@(ViewBag.headIndex == "hi_2" ? "div_css_pitchon" : "div_css_pitchon_none")">
+                    <a href="@(Url.Action("Index_Already", "InterfaceApply"))">已审核申请单</a>
+                </div>
+                <div class="@(ViewBag.headIndex == "hi_6" ? "div_css_pitchon" : "div_css_pitchon_none")">
+                    <a href="@(Url.Action("Index", "ChanncelPower"))">生活频道用户权限</a>
+                </div>
+                <div class="@(ViewBag.headIndex == "hi_3" ? "div_css_pitchon" : "div_css_pitchon_none")">
+                    <a href="@Url.Action("Index", "Counter")">接口调用统计</a>
+                </div>
+                <div class="@(ViewBag.headIndex == "hi_4" ? "div_css_pitchon" : "div_css_pitchon_none")">
+                    <a href="@Url.Action("Index", "DownCount")">频道号调用日志</a>
+                </div>
+                <div class="@(ViewBag.headIndex == "hi_5" ? "div_css_pitchon" : "div_css_pitchon_none")">
+                    <a href="@Url.Action("Index", "AccountManage")">审核人员帐号管理</a>
+                </div>
+                <div class="@(ViewBag.headIndex == "hi_7" ? "div_css_pitchon" : "div_css_pitchon_none")">
+                    <a href="@Url.Action("Index", "InterfaceField")">接口栏位列表</a>
+                </div>
+            </div>
+            <div class="main_body_show">
+                <div class="main_div">
+                    <div style="margin: 4px;">
+                        @RenderBody()
+                    </div>
+                </div>
+                <div style="clear: both; height: 20px;"></div>
+            </div>
+        </div>
+        <div class="foot_mang">
+            <div class="foot_mangone">
+                <div style="float: left;">
+                    <a href="http://icivet.foxconn.com/" style="text-decoration: none; color: #2980b9;" target="_blank">香信首頁</a>
+                    <i>|</i>
+                    <a href="http://civetpublic.foxconn.com" style="text-decoration: none; color: #2980b9;" target="_blank">生活頻道首頁</a>
+                    <i>|</i>
+                    <a href="http://icivet.foxconn.com/Contact" style="text-decoration: none; color: #2980b9;" target="_blank">聯系我們 </a>
+                </div>
+                <div style="float: right;">Copyright&nbsp;&copy;&nbsp;2002- @DateTime.Now.Year &nbsp;&nbsp;Foxconn  Software  Company(NJ).  All   Rights   Reserved</div>
+            </div>
+        </div>
+    </div>
+    @RenderSection("Page_End_Scripts", required: false)
+
+</body>
+</html>
+@*<script src="http://icivet.foxconn.com/Counter/Counter.js"></script>*@

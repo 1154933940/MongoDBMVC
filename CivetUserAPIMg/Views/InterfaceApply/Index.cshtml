@@ -1,0 +1,102 @@
+﻿@model PagedList<ModUApiPowerAplictionFind>
+@using CivetHR.UserAPI
+@using Webdiyer.WebControls.Mvc
+@using CivetUserAPIMg.Models
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_1";
+}
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px;">
+        <h3>待审核申请单</h3>
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center">
+        @using (Html.BeginForm("Index", "InterfaceApply", FormMethod.Get))
+        { 
+            <label>
+                频道帐号:<input  type="text" name="serviceno_uid" value="@ViewBag.SearchCondtion.serviceno_uid"/>&nbsp
+                负责人工号/负责人姓名:<input type="text" name="civetno" value="@ViewBag.SearchCondtion.civetno" />&nbsp
+                 状态:          <select name="Status" style="height: 25px; margin-right: 15px;">
+               <option value="">全部</option>
+               <option value="申请中" @(ViewBag.status == "申请中" ? "selected" : "")>申请中</option>
+               <option value="待审核" @(ViewBag.status == "待审核" ? "selected" : "")>待审核</option>
+           </select>
+                <input type="submit" class="btn-s" style="overflow: visible;" value="搜索">
+            </label>
+        }
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>频道帐号</th>
+                <th>负责人工号</th>
+                <th>负责人姓名</th>
+                <th>状态</th>
+                <th>负责人手机</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.serviceno_uid</td>
+                    <td>@item.civetno</td>
+                    <td>@item.user_name</td>
+                    <td>@item.status</td>
+                    <td>@item.mobile</td>
+                    <td>@Util.FormatTime(item.appliction_time)</td>
+                    <td style="color: #6B97CB; cursor: pointer;">
+                        @if (item.status == "申请中" && string.IsNullOrEmpty(item.application_url))
+                        {
+                            <label style="color: #ff0000">请上传签核档</label>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("AuditOneMessage", "InterfaceApply", new { id = item._id })">审核</a>
+                        }
+                        |
+                        <a title="删除" class="i-btn" onclick="javascript:return confirm('請確定是否要刪除此條記錄，刪除之後無法恢復！');"
+                    href="@Url.Action("Delete", "InterfaceApply", new { id = item._id })">删除</a>
+                    </td>
+                </tr>      
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <div class="pagescount">
+        <div class="pagelength">頁碼 @Model.CurrentPageIndex/@Model.TotalPageCount  記錄數 @Model.TotalItemCount</div>
+        <div class="pageindex">
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", ShowPageIndexBox = true, PageIndexBoxType = PageIndexBoxType.DropDownList, ShowGoButton = false })
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .pagescount {
+        width: 95%;
+        height: 60px;
+        padding: 0px 20px;
+    }
+
+    .pagelength {
+        width: 20%;
+        float: left;
+        height: 50%;
+        line-height: 30px;
+    }
+
+    .pageindex {
+        float: right;
+    }
+</style>
+@section Page_End_Scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+}

@@ -1,0 +1,2316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PDSS.CivetPublic.User</name>
+    </assembly>
+    <members>
+        <member name="T:PDSS.CivetPublic.User.CivetException">
+            <summary>
+            香信异常处理类
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetException.#ctor(System.String)">
+            <summary>
+            香信异常处理类构造方法
+            </summary>
+            <param name="Message">异常信息</param>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetException.StackTrace">
+            <summary>
+            获取调用堆栈上直接帧的字符串表示形式。
+            </summary>
+            <value>调用堆栈上直接帧的字符串表示形式</value>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" PathDiscovery="*AllFiles*" />
+            </PermissionSet>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetHelper">
+            <summary>
+            香信开发辅助类
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetHelper.CivetTitleJsCode(System.String,System.String,System.String)">
+            <summary>
+            在香信中显示标题，及转发时的图标、说明
+            </summary>
+            <param name="title">标题</param>
+            <param name="icon">图标.</param>
+            <param name="desc">说明</param>
+            <returns>返回JS代码包括JS的申明</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetHelper.IsUsePhone">
+            <summary>
+            判断是否使用手机
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetHelper.IsCivet">
+            <summary>
+            判断是否使用香信手机端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetHelper.CheckCivetPassword(System.String,System.String,System.String,System.String@)">
+            <summary>
+            验证个人香信的帐号密码是否正确
+            <para>[此方法暂不对外开放]</para>
+            </summary>
+            <param name="CivetNoOrUserName">香信号（工号）或别名</param>
+            <param name="Password">香信密码</param>
+            <param name="Signature">签名</param>
+            <param name="RunResultInfo">执行信息</param>
+            <returns>香信号（工号）</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetHelper.JsRedirect(System.String,System.String,System.String)">
+            <summary>
+            JS跳转
+            </summary>
+            <param name="url">OAuth链接地址</param>
+            <param name="prompt">提示，空字符串不提示</param>
+            <param name="charset">显示编码方式</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetHelper.CommonCallApi(System.String,System.String,System.String,System.String)">
+            <summary>
+            调用API接口的通用方法
+            </summary>
+            <param name="relative_url">API接口相对路径</param>
+            <param name="method">调用方法</param>
+            <param name="request_data">请求数据</param>
+            <param name="contentType">请求数据类型</param>
+            <returns>响应结果</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetHelper.APIUrl">
+            <summary>
+            获得或设定接口的地址
+            </summary>
+            <value>接口的地址,默认地址为：http://civetinterface.foxconn.com/Open </value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetHelper.CivetInterfaceUrl">
+            <summary>
+            获得或设定接口的地址(生成纸质二维码)
+            </summary>
+            <value>接口的地址,默认地址为：http://civetinterface.foxconn.com </value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetHelper.UID">
+            <summary>
+            设置或获取生活频道帐号
+            </summary>
+            <value>生活频道帐号</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetHelper.Password">
+            <summary>
+            设置或获取高级接口调用密码
+            </summary>
+            <value>高级接口调用密码</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetHelper.AppID">
+            <summary>
+            设置或获取生活频道AppID
+            </summary>
+            <value>生活频道AppID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetHelper.Version">
+            <summary>
+            获取SDK的版本
+            </summary>
+            <value>SDK的版本</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetMsg">
+            <summary>
+            香信消息基类
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetMsg.MsgType">
+            <summary>
+            获取消息类型
+            </summary>
+            <value>消息类型</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetTextMsg">
+            <summary>
+            文字消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetTextMsg.#ctor">
+            <summary>
+            文字消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetTextMsg.Create(System.String)">
+            <summary>
+            创建一个文字消息实例
+            </summary>
+            <param name="Content">文字消息内容</param>
+            <returns>文字消息实例</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetTextMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetTextMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetTextMsg.Content">
+            <summary>
+            文字消息
+            </summary>
+            <value>The content.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetMediaMsg">
+            <summary>
+            多媒体消息
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMsg"/>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetMediaMsg._MediaUrl">
+            <summary>
+            The media URL
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetMediaMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetMediaMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetMediaMsg.MediaID">
+            <summary>
+            媒体ID
+            </summary>
+            <value>媒体ID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetMediaMsg.MediaUrl">
+            <summary>
+            媒体Url
+            </summary>
+            <value>媒体Url</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetImageMsg">
+            <summary>
+            图片消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMediaMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetImageMsg.#ctor">
+            <summary>
+            图片消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetImageMsg.Create(System.String)">
+            <summary>
+            创建一个图片消息实例
+            </summary>
+            <param name="MediaID">图片UUID</param>
+            <returns>图片消息实例</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetVoiceMsg">
+            <summary>
+            音频消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMediaMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVoiceMsg.#ctor">
+            <summary>
+            音频消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVoiceMsg.Create(System.String)">
+            <summary>
+            创建一个音频消息实例
+            </summary>
+            <param name="MediaID">音频UUID</param>
+            <returns>音频消息实例</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetVideoMsg">
+            <summary>
+            视频消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMediaMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVideoMsg.#ctor">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVideoMsg.Create(System.String,System.String)">
+            <summary>
+            创建一个视频消息实例
+            </summary>
+            <param name="MediaID">视频UUID</param>
+            <param name="ThumbMediaID">缩略图UUID</param>
+            <returns>视频消息实例</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVideoMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVideoMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetVideoMsg.ThumbMediaID">
+            <summary>
+            缩略图UUID
+            </summary>
+            <value>缩略图UUID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetVideoMsg.Title">
+            <summary>
+            视频标题
+            </summary>
+            <value>视频标题</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetVideoMsg.Description">
+            <summary>
+            视频描述
+            </summary>
+            <value>视频描述</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetDocMsg">
+            <summary>
+            文档消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMediaMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetDocMsg.#ctor">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetDocMsg.Create(System.String)">
+            <summary>
+            创建一个文档消息实例
+            </summary>
+            <param name="MediaID">文档UUID</param>
+            <returns>文档消息实例</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetDocMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetDocMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetDocMsg.Title">
+            <summary>
+            文档标题
+            </summary>
+            <value>文档标题</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetDocMsg.Description">
+            <summary>
+            文档描述
+            </summary>
+            <value>文档描述</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetEventMsg">
+            <summary>
+            事件消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMediaMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetEventMsg.#ctor">
+            <summary>
+            事件消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetEventMsg.Event">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetEventMsg.EventKey">
+            <summary>
+            事件对应的Code
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetEventMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetEventMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetAdverMsg">
+            <summary>
+            广告消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetAdverMsg.#ctor">
+            <summary>
+            广告消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetAdverMsg._ImageMedia">
+            <summary>
+            The image media
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetAdverMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetAdverMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetAdverMsg.Author">
+            <summary>
+            广告作者
+            </summary>
+            <value>广告作者</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetAdverMsg.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+            <value>创建时间</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetAdverMsg.Title">
+            <summary>
+            广告标题
+            </summary>
+            <value>广告标题</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetAdverMsg.ImageMedia">
+            <summary>
+            广告图片
+            </summary>
+            <value>The image media.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetAdverMsg.Description">
+            <summary>
+            广告说明
+            </summary>
+            <value>广告说明</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetAdverMsg.Url">
+            <summary>
+            广告链接
+            </summary>
+            <value>The URL.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetNewsMsg">
+            <summary>
+            图文消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetNewsMsg.#ctor">
+            <summary>
+            图文消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetNewsMsg.Create(System.Collections.Generic.List{PDSS.CivetPublic.User.CivetArticle},System.Nullable{System.DateTime})">
+            <summary>
+            创建一个图文消息实例
+            </summary>
+            <param name="Articles">图文列表</param>
+            <param name="CreateTime">图文创建时间</param>
+            <returns>图文消息实例</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetNewsMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetNewsMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetNewsMsg.ArticleCount">
+            <summary>
+            图文消息个数
+            </summary>
+            <value>The article count.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetNewsMsg.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+            <value>The create time.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetNewsMsg.Articles">
+            <summary>
+            图文
+            </summary>
+            <value>图文</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetConferenceMsg">
+            <summary>
+            创建会议室事件消息类
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetConferenceMsg.#ctor">
+            <summary>
+            创建会议室事件消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetConferenceMsg.EventKey">
+            <summary>
+            会议对应ID
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetConferenceMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetConferenceMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetVCardMsg">
+            <summary>
+            电子名片
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.CivetMsg"/>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVCardMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetVCardMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetVCardMsg.VCardCivetNo">
+            <summary>
+            名片工号
+            </summary>
+            <value>名片工号</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetVCardMsg.VCardNickName">
+            <summary>
+            名片昵称
+            </summary>
+            <value>名片昵称</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetVCardMsg.VCardIcon">
+            <summary>
+            名片头像
+            </summary>
+            <value>名片头像</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetArticle">
+            <summary>
+            图文类
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetArticle._ImageMedia">
+            <summary>
+            The image media
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetArticle.Covert(interface.__Civet_Public_API_.CivetMsgBase.Article)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetArticle.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.Article.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetArticle.Author">
+            <summary>
+            作者
+            </summary>
+            <value>作者</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetArticle.Title">
+            <summary>
+            图文消息标题
+            </summary>
+            <value>图文消息标题</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetArticle.Description">
+            <summary>
+            图文消息描述
+            </summary>
+            <value>图文消息描述</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetArticle.ImageMedia">
+            <summary>
+            文章图片
+            </summary>
+            <value>The image media.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetArticle.Url">
+            <summary>
+            点击图文消息跳转链接
+            </summary>
+            <value>点击图文消息跳转链接</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetCustomMsg">
+            <summary>
+            自定义消息类
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetCustomMsg.#ctor">
+            <summary>
+            创建自定义消息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetCustomMsg.Covert(interface.__Civet_Public_API_.CivetMsgBase.xml)">
+            <summary>
+            CivetMsgBase.xml转换成本类
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetCustomMsg.ToBase">
+            <summary>
+            转化成CivetMsgBase.xml
+            </summary>
+            <returns>CivetMsgBase.xml.</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetCustomMsg.Content">
+            <summary>
+            自定义消息内容
+            <para>通常是一个XML格式的字符串。</para>
+            <para>此方法提供给香信内部团队，用于一些新消息格式的调试，不建议普通用户使用。</para>
+            </summary>
+            <value>The content.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.eMediaValType">
+            <summary>
+            多媒体素材类型
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.eMediaValType.ID">
+            <summary>
+            素材ID
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.eMediaValType.Url">
+            <summary>
+            素材地址
+            </summary>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetValue`1">
+            <summary>
+            香信Key Value类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetValue`1._value">
+            <summary>
+            The value
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.CivetValue`1._key">
+            <summary>
+            The key
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.CivetValue`1.Set(`0,System.String)">
+            <summary>
+            赋值
+            </summary>
+            <param name="Key">键</param>
+            <param name="Value">值</param>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetValue`1.Value">
+            <summary>
+            对应值
+            </summary>
+            <value>对应值</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.CivetValue`1.Key">
+            <summary>
+            对应键
+            </summary>
+            <value>对应键</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.CivetListItem">
+            <summary>
+            香信Text Value类
+            </summary>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.EmnuMsgType">
+            <summary>
+            消息类型值
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.text">
+            <summary>
+            文字消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.image">
+            <summary>
+            图片消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.voice">
+            <summary>
+            音频消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.video">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.casestudy">
+            <summary>
+            案例分享
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.adver">
+            <summary>
+            广告消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.news">
+            <summary>
+            图文消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.event">
+            <summary>
+            事件消息
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.conference">
+            <summary>
+            会议室调用
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.vcard">
+            <summary>
+            电子名片
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.doc">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.EmnuMsgType.custom_msg">
+            <summary>
+            自定义的消息类
+            </summary>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.LogManager">
+            <summary>
+            日志管理类
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.LogManager.CallCivetInterfaceLog">
+            <summary>
+            是否启用日志功能
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.LogManager.PathLog">
+            <summary>
+            日志路径
+            </summary>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.SoftwareToken">
+            <summary>
+            SoftwareToken管理类
+            <para>包括：Token验证；Token个人用户新增、查询等。</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.SoftwareToken.appid">
+            <summary>
+            生活频道AppID
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.SoftwareToken.password">
+            <summary>
+            SoftwareToken密码
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.SoftwareToken.url">
+            <summary>
+            接口根地址
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.SoftwareToken.#ctor(System.String,System.String)">
+            <summary>
+            SoftwareToken管理类构造方法
+            </summary>
+            <param name="appid">生活频道AppID</param>
+            <param name="password">SoftwareToken密码</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.SoftwareToken.GetPersonUsers(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取Token用户信息
+            </summary>
+            <param name="acount">第三方系统帐号</param>
+            <param name="civetno">用户工号</param>
+            <param name="pagenum">页码</param>
+            <param name="pagesize">每页最大数</param>
+            <returns>GetUsersResult.</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.SoftwareToken.AddPersonUsers(PDSS.CivetPublic.User.SoftwareToken.AddUserItem[])">
+            <summary>
+            新增Token用户信息
+            </summary>
+            <param name="datas">The datas.</param>
+            <returns>AddUsersResult.</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.SoftwareToken.Check(System.String,System.String)">
+            <summary>
+            验证用户Token
+            </summary>
+            <param name="acount">用户在第三方系统帐号</param>
+            <param name="token">用户Token</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.SoftwareToken.GetUsersResult">
+            <summary>
+            获取Token用户信息返回结果类
+            </summary>
+            <seealso cref="!:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult"/>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult">
+            <summary>
+            Class TokenBaseResult.
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase">
+            <summary>
+            消息XML信息
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.xml">
+            <summary>
+            Class xml.
+            </summary>
+        </member>
+        <member name="M:interface.__Civet_Public_API_.CivetMsgBase.xml.#ctor">
+            <summary>
+            默认构造方法
+            </summary>
+        </member>
+        <member name="M:interface.__Civet_Public_API_.CivetMsgBase.xml.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="FormCivetNo">The form civet no.</param>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.SendTime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.UserGroupID">
+            <summary>
+            用户分组ID（群发消息用）
+            0：表示关注台所有关注用户
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ForceByUserGroup">
+            <summary>
+            强行按分组发送
+            用于服务台、广播台群发消息，改变其默认发送所服务人员的方式
+            true:强行按分组发送
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ToUserName">
+            <summary>
+            接收者 (频道号 / openid)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.FromUserName">
+            <summary>
+            发送者  (频道号 / openid)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.FormCivetNo">
+            <summary>
+            发送者的个人香信号
+            Sophy 2015/08/22
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ForwardTo">
+            <summary>
+            转发给谁，用于消息转发功能
+            只能转发由个人用户(ToUserName为OpenID)发给频道号的用户。
+            Sophy 2015/08/22
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml._VCardCivetNo">
+            <summary>
+            The _ v card civet no
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.VCardNickName">
+            <summary>
+            名片昵称
+            何小芳 2015/09/01
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.VCardIcon">
+            <summary>
+            名片头像
+            何小芳 2015/09/01
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ToCivetNo">
+            <summary>
+            消息接收者香信号
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.RepeatSend">
+            <summary>
+            重新发送
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Content">
+            <summary>
+            文字消息
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.MediaID">
+            <summary>
+            媒体UUID
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.MediaUrl">
+            <summary>
+            媒体(生活频道接口接收信息使用)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Format">
+            <summary>
+            音频格式
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ThumbMediaID">
+            <summary>
+            缩略图UUID
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Title">
+            <summary>
+            广告标题 (离线广告)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ImageMediaID">
+            <summary>
+            广告图片 (离线广告)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Description">
+            <summary>
+            广告说明 (离线广告)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ArticleCount">
+            <summary>
+            图文消息个数
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Articles">
+            <summary>
+            图文
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Url">
+            <summary>
+            广告链接
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Event">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.EventKey">
+            <summary>
+            事件对应的Code
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Author">
+            <summary>
+            作者
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Location_X">
+            <summary>
+            地理位置纬度
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Location_Y">
+            <summary>
+            地理位置经度
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Scale">
+            <summary>
+            地图缩放大小
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.Label">
+            <summary>
+            地理位置信息
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.ToPhoneUser">
+            <summary>
+            短信用户，格式为： 电话号码_工号
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.xml.NotifyUrl">
+            <summary>
+            回调函数
+            </summary>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.xml.VCardCivetNo">
+            <summary>
+            名片工号
+            </summary>
+            <value>The v card civet no.</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.xml.ToCivetNo_AutoAddUser">
+            <summary>
+            自動添加用戶 （指定成員的服務台有效）
+            </summary>
+            <value>自動添加用戶 （指定成員的服務台有效）</value>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.Article">
+            <summary>
+            图文类
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.Title">
+            <summary>
+            图文消息标题
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.Description">
+            <summary>
+            图文消息描述
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.MediaUrl">
+            <summary>
+            媒体(生活频道接口接收信息使用)
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.ImageMediaID">
+            <summary>
+            文章图片
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.PicUrl">
+            <summary>
+            图片链接（暂停使用）
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.Url">
+            <summary>
+            点击图文消息跳转链接
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.Article.Author">
+            <summary>
+            作者
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriber">
+            <summary>
+            Class ModSubscriber.
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriber.xml">
+            <summary>
+            Class xml.
+            </summary>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriber.xml.FromUserName">
+            <summary>
+            设置或读取the name of from user.
+            </summary>
+            <value>The name of from user.</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriber.xml.Password">
+            <summary>
+            设置或读取the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriber.xml.EmpNo">
+            <summary>
+            设置或读取the emp no.
+            </summary>
+            <value>The emp no.</value>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModOpenSearchEmpInfo">
+            <summary>
+            获得用户工號、次集团、事业群、事业处
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberOpenID">
+            <summary>
+            Class XmlSubscribe_Person.
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberOpenID.xml">
+            <summary>
+            Class xml.
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberOpenID.xml.FromUserName">
+            <summary>
+            频道帐号
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberOpenID.xml.password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberOpenID.xml.OpenID">
+            <summary>
+            OpenID
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSpecialMember">
+            <summary>
+            新增服务台用户模型类
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSpecialMember.xml">
+            <summary>
+            新增服务台用户模型类
+            </summary>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSpecialMember.xml.subscriber">
+            <summary>
+            设置或获取订阅者的香信号
+            </summary>
+            <value>订阅者的香信号</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSpecialMember.xml.FromUserName">
+            <summary>
+            设置或获取频道号
+            </summary>
+            <value>频道号</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSpecialMember.xml.password">
+            <summary>
+            设置或获取密码
+            </summary>
+            <value>密码</value>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch">
+            <summary>
+            ModSubscriberSearch
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml">
+            <summary>
+            Class xml.
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml.FromUserName">
+            <summary>
+            频道帐号
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml.password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml.group_id">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml.start_civet_no">
+            <summary>
+            开始香信号
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml.pagesize">
+            <summary>
+            每页多少条
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.ModSubscriberSearch.xml.broadcast_retrun_all">
+            <summary>
+            如果是广播台则返回“ALL”字符串
+            </summary>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.ModCheckCivetPassword">
+            <summary>
+            ModCheckCivetPassword
+            </summary>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModCheckCivetPassword.Result">
+            <summary>
+            返回结果代码
+            </summary>
+            <value>The result.</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModCheckCivetPassword.Reason">
+            <summary>
+            Gets or sets the reason.
+            </summary>
+            <value>The reason.</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.ModCheckCivetPassword.Data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+            <value>The data.</value>
+        </member>
+        <member name="T:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult">
+            <summary>
+            Class TokenBaseResult.
+            </summary>
+        </member>
+        <member name="F:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult._result">
+            <summary>
+            The _result
+            </summary>
+        </member>
+        <member name="M:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult.GetRemark(System.Int32)">
+            <summary>
+            Gets the remark.
+            </summary>
+            <param name="code">The code.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult.result">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>The result.</value>
+        </member>
+        <member name="P:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult.remark">
+            <summary>
+            获得或设定验证结果说明
+            </summary>
+            <value>验证结果说明</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResult.total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>The total.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResult.datas">
+            <summary>
+            Gets or sets the datas.
+            </summary>
+            <value>The datas.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.SoftwareToken.GetUsersResultItem">
+            <summary>
+            获取Token用户基本信息
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResultItem.account">
+            <summary>
+            第三方系统帐号
+            </summary>
+            <value>The account.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResultItem.civetno">
+            <summary>
+            香信帐号
+            </summary>
+            <value>The civetno.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResultItem.starttime">
+            <summary>
+            Token有效开始时间
+            </summary>
+            <value>The starttime.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResultItem.endtime">
+            <summary>
+            Token有效截止时间
+            </summary>
+            <value>The endtime.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.GetUsersResultItem.status">
+            <summary>
+            Token状态（1：正常；0：禁用）
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.SoftwareToken.AddUserItem">
+            <summary>
+            新增Token用户信息Model
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.AddUserItem.civetno">
+            <summary>
+            香信帐号
+            </summary>
+            <value>The civetno.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.AddUserItem.account">
+            <summary>
+            第三方系统帐号
+            </summary>
+            <value>The account.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.AddUserItem.starttime">
+            <summary>
+            Token有效开始时间
+            </summary>
+            <value>The starttime.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.AddUserItem.endtime">
+            <summary>
+            Token有效截止时间
+            </summary>
+            <value>The endtime.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.SoftwareToken.AddUsersResult">
+            <summary>
+            新增Token用户信息返回结果类
+            </summary>
+            <seealso cref="!:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult"/>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.SoftwareToken.AddUsersResult.import">
+            <summary>
+            批量导入Token用户信息完成总数（新增/修改总数）
+            </summary>
+            <value>The import.</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.SoftwareToken.CheckResult">
+            <summary>
+            验证用户Token结果类
+            </summary>
+            <seealso cref="!:interface.__Civet_Public_API_.CivetMsgBase.TokenBaseResult"/>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.Subscriber">
+            <summary>
+            生活频道订阅用户管理
+            <para>包括：生活频道订阅用户管理以及指定成员的服务台成员管理</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.Subscriber.url">
+            <summary>
+            接口根地址
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.Subscriber.UserName">
+            <summary>
+            The user name
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.Subscriber.Password">
+            <summary>
+            The password
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="UserName">生活频道帐号</param>
+            <param name="Password">生活频道接口密码</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.GetEmpName(System.String)">
+            <summary>
+            获得用户姓名
+            </summary>
+            <param name="CivetNo">用户香信号</param>
+            <returns>用户姓名</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.SearchEmpInfo(System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            搜索香信用户信息
+            <para>根据集团资安要求，此方法仅香信内部系统使用，不对第三方接入系统开放。</para>
+            </summary>
+            <param name="Sign">请求数据签名</param>
+            <param name="Timestamp">时间随机数</param>
+            <param name="CivetNo">员工工号
+            <para>与EmpName至少一个不为空</para><para>完全匹配搜索</para></param>
+            <param name="EmpName">员工姓名
+            <para>与CivetNo至少一个不为空</para><para>完全匹配搜索</para></param>
+            <param name="PageNum">页码</param>
+            <param name="PageSize">每页数据大小</param>
+            <returns>搜索结果</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.GetEmpResigned(System.String)">
+            <summary>
+            集团员工是否离职
+            </summary>
+            <param name="CivetNo">用户香信号</param>
+            <returns>是否离职</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.SelectEmpResigned(System.String)">
+            <summary>
+            从指定人员工号中找出离职人员工号
+            </summary>
+            <param name="CivetNos">指定人员工号以英文逗号隔开</param>
+            <returns>离职人员工号数组</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.GetSubscribers(System.Int32,System.String,System.Int32,System.Boolean)">
+            <summary>
+            分批获得所有订阅者
+            </summary>
+            <param name="group_id">频道帐号所属分组ID（可以为空）
+            此值为空或为0：表示所有订阅用户；
+            1：表示“未分组”用户；
+            2：表示“标星组”用户；
+            3：表示“黑名单”用户；
+            &gt;=4：表示自定义分组用户；
+            -1：表示获得“按指定成员的”服务台的指定成员名单。</param>
+            <param name="start_civet_no">查看开始帐号（结果不包含此值）</param>
+            <param name="pagesize">每页数据大小</param>
+            <param name="broadcast_retrun_all">如果是广播台则直接返回“ALL”字符串</param>
+            <returns>返回值：用户列表格式为“F00001,F00002”/错误信息内容</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.IsSubscriber(System.String)">
+            <summary>
+            判断是否为订阅者
+            </summary>
+            <param name="OpenID">用户的OpenID</param>
+            <returns>返回值：true/false/错误信息内容</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.AddSubscriber(System.String)">
+            <summary>
+            添加订阅用户
+            </summary>
+            <param name="OpenID">用户的OpenID</param>
+            <returns>返回值：true/false/错误信息内容</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.AddSpecialMember(System.String[])">
+            <summary>
+            指定成员的服务台添加成员
+            </summary>
+            <param name="subscribers">一组用户工号</param>
+            <returns>操作结果 true/false 或异常原因</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Subscriber.GetUserGroupOrTags">
+            <summary>
+            获得我的用户的分组、标签等信息
+            </summary>
+            <returns>我的用户的分组、标签等信息</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.Subscriber.ModUserGroupOrTag">
+            <summary>
+            用户的分组、标签等信息类
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.ModUserGroupOrTag.SelectType">
+            <summary>
+            获得或设置用户分类类型
+            <para>包括：按用户分组(值：2)、按用户标签(值：3)、所有系统设定成员(值：1)、所有服务组织成员(值：0)等值</para>
+            </summary>
+            <value>用户分类类型</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.ModUserGroupOrTag.Groups">
+            <summary>
+            获得或设置用户分组
+            </summary>
+            <value>用户分组</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.ModUserGroupOrTag.Tags">
+            <summary>
+            获得或设置用户标签
+            </summary>
+            <value>用户标签</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.Subscriber.result">
+            <summary>
+            获得用户姓名模型操作结果
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.result.ResultCode">
+            <summary>
+            设置或读取结果Code.
+            <para>0.表示无数据 1.表示成功 -1.表示异常</para>
+            </summary>
+            <value>结果Code.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.result.ErrInfo">
+            <summary>
+            设置或读取错误信息
+            </summary>
+            <value>错误信息</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.result.EmpName">
+            <summary>
+            设置或读取员工姓名
+            </summary>
+            <value>员工姓名</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.Subscriber.SearchResult">
+            <summary>
+            用户搜索结果
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.ResultCode">
+            <summary>
+            设置或读取结果Code.
+            <para>0.表示无数据 1.表示成功 -1.表示异常</para>
+            </summary>
+            <value>结果Code.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.ErrInfo">
+            <summary>
+            设置或读取错误信息
+            </summary>
+            <value>错误信息</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.EmpInfos">
+            <summary>
+            设置或读取搜索结果
+            </summary>
+            <value>搜索结果</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.Subscriber.SearchResult.EmpInfo">
+            <summary>
+            Class EmpInfo.
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.EmpInfo.EmpNo">
+            <summary>
+            设置或读取员工工号
+            </summary>
+            <value>员工工号</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.EmpInfo.EmpName">
+            <summary>
+            设置或读取员工姓名
+            </summary>
+            <value>员工姓名</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.EmpInfo.Unit">
+            <summary>
+            设置或读取员工所在的次集团
+            </summary>
+            <value>员工所在的次集团</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.Subscriber.SearchResult.EmpInfo.Dept">
+            <summary>
+            设置或读取员工所在的部门
+            </summary>
+            <value>员工所在的部门</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.MsgReceiver">
+            <summary>
+            接收用户消息类
+            <para>需要在civetpublic.foxconn.com开启“开发模式”才能使用</para>
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgReceiver.Receive(System.Web.HttpRequest,System.String,System.Boolean)">
+            <summary>
+            接收消息数据
+            </summary>
+            <param name="Request">网页当前Request对像</param>
+            <param name="Token">消息验证Token</param>
+            <param name="IsCheckSignature">是否显示签名</param>
+            <returns>消息数据</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgReceiver.Receive(System.Web.HttpRequestBase,System.String,System.Boolean)">
+            <summary>
+            接收消息数据
+            </summary>
+            <param name="Request">网页当前Request对像</param>
+            <param name="Token">消息验证Token</param>
+            <param name="IsCheckSignature">是否显示签名</param>
+            <returns>消息数据</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgReceiver.ReceiveBase``1(``0,System.String,System.Boolean)">
+            <summary>
+            接收消息数据基本方法
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="RequestBase">网页当前Request对像</param>
+            <param name="Token">消息验证Token</param>
+            <param name="IsCheckSignature">是否显示签名</param>
+            <returns>消息数据</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgReceiver.Response(PDSS.CivetPublic.User.CivetMsg)">
+            <summary>
+            响应
+            </summary>
+            <param name="ResponseData">响应消息</param>
+            <returns>接口能接受的响应数据信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgReceiver.Response(System.String)">
+            <summary>
+            响应
+            </summary>
+            <param name="ResponseText">响应文字消息内容，支持HTML的A标签</param>
+            <returns>接口能接受的响应数据信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgReceiver.CheckSignature(System.String,System.String,System.String,System.String)">
+            <summary>
+            验证香信签名
+            </summary>
+            <param name="token">验证消息Token</param>
+            <param name="signature">Url中的signature</param>
+            <param name="timestamp">Url中的timestamp</param>
+            <param name="nonce">Url中的nonce</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.MsgReceiver.PersonOpenID">
+            <summary>
+            设置或获取个人用户OpenID
+            </summary>
+            <value>个人用户OpenID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.MsgReceiver.EnterpriseUID">
+            <summary>
+            设置或获取企业用户ID
+            </summary>
+            <value>企业用户ID</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.ReceiveReulst">
+            <summary>
+            接收消息结果
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.ReceiveReulst.Result">
+            <summary>
+            设置或获取结果值
+            </summary>
+            <value>结果值 OK/异常信息</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.ReceiveReulst.Data">
+            <summary>
+            设置或获取接收数据
+            </summary>
+            <value>接收数据</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.MsgSender">
+            <summary>
+            消息发送类
+            <para>调用此方法之前，请先确定您的生活频道有对应的权限。</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.MsgSender.url">
+            <summary>
+            接口根地址
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.MsgSender.OrganNoAutoAddUser">
+            <summary>
+            指定成員的服務台發消息時自動添加用戶
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="UserName">生活频道帐号</param>
+            <param name="Password">生活频道接口密码</param>
+            <exception cref="T:PDSS.CivetPublic.User.CivetException">帐号密码不能为空！</exception>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.SendByOpenID(PDSS.CivetPublic.User.CivetMsg,System.String[])">
+            <summary>
+            按OpenID进行发送消息
+            </summary>
+            <param name="Data">要发送的消息内容</param>
+            <param name="OpenIDs">用户OpenID数组</param>
+            <returns>操作结果：true/false/异常信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.SendByOpenID(System.String,System.String[])">
+            <summary>
+            按OpenID进行发送消息
+            </summary>
+            <param name="Text">要发送的文字消息内容，支持HTML的A标签</param>
+            <param name="OpenIDs">用户OpenID数组</param>
+            <returns>操作结果：true/false/异常信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.SendByCivetNo(PDSS.CivetPublic.User.CivetMsg,System.String[])">
+            <summary>
+            按CivetNo(工号)进行发送消息
+            </summary>
+            <param name="Data">要发送的消息内容</param>
+            <param name="CivetNos">用户CivetNo(工号)数组</param>
+            <returns>操作结果：true/false/异常信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.SendByCivetNo(System.String,System.String[])">
+            <summary>
+            按CivetNo(工号)进行发送消息
+            </summary>
+            <param name="Text">要发送的文字消息内容，支持HTML的A标签</param>
+            <param name="CivetNos">用户CivetNo(工号)数组</param>
+            <returns>操作结果：true/false/异常信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.SendByPhone(PDSS.CivetPublic.User.CivetMsg,System.String)">
+            <summary>
+            按用户绑定的手机号进行发送消息
+            </summary>
+            <param name="Data">要发送的消息内容</param>
+            <param name="Phone">用户绑定的手机号
+            <para>也接收“手机号_工号”的数据格式</para></param>
+            <returns>操作结果：true/false/异常信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgSender.SendByPhone(System.String,System.String)">
+            <summary>
+            按用户绑定的手机号进行发送消息
+            </summary>
+            <param name="Text">要发送的文字消息内容，支持HTML的A标签</param>
+            <param name="Phone">用户绑定的手机号
+            <para>也接收“手机号_工号”的数据格式</para></param>
+            <returns>操作结果：true/false/异常信息</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.MsgSender.fullUrl">
+            <summary>
+            设置或获取完整路径
+            </summary>
+            <value>完整路径</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.MsgMassSender">
+            <summary>
+            消息群发类
+            <para>调用此方法之前，请先确定您的生活频道有对应的权限。</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.MsgMassSender.url">
+            <summary>
+            接口根地址
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.MsgMassSender.UserName">
+            <summary>
+            The user name
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.MsgMassSender.Password">
+            <summary>
+            The password
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgMassSender.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="UserName">生活频道帐号</param>
+            <param name="Password">生活频道接口密码</param>
+            <exception cref="T:PDSS.CivetPublic.User.CivetException">帐号密码不能为空！</exception>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgMassSender.Send(PDSS.CivetPublic.User.CivetMsg,System.Int32,System.Boolean)">
+            <summary>
+            群发消息
+            </summary>
+            <param name="Data">要发送的消息内容</param>
+            <param name="UserGroupID">用户分组ID（该值可以在用户管理中点击分组名称后在网址中获得，如：http://civetpublic.foxconn.com/Contact?groupId=2 ，则2为"标星组"分组Id,0：表示关注台所有关注用户）</param>
+            <param name="ForceByUserGroup">强行按分组发送（用于服务台、广播台群发消息，改变其默认发送所服务人员的方式，true:强行按分组发送）</param>
+            <returns>操作结果 true/false/异常原因</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgMassSender.Send(System.String,System.Int32,System.Boolean)">
+            <summary>
+            群发消息
+            </summary>
+            <param name="Text">要发送的文字消息内容，支持HTML的A标签</param>
+            <param name="UserGroupID">用户分组ID（该值可以在用户管理中点击分组名称后在网址中获得，如：http://civetpublic.foxconn.com/Contact?groupId=2 ，则2为"标星组"分组Id,0：表示关注台所有关注用户）</param>
+            <param name="ForceByUserGroup">强行按分组发送（用于服务台、广播台群发消息，改变其默认发送所服务人员的方式，true:强行按分组发送）</param>
+            <returns>操作结果 true/false/异常原因</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgMassSender.SendByTag(PDSS.CivetPublic.User.CivetMsg,System.Int32)">
+            <summary>
+            按用户标签群发消息
+            </summary>
+            <param name="Data">要发送的消息内容</param>
+            <param name="TagID">用户标签ID</param>
+            <returns>操作结果 true/false/异常原因</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.MsgMassSender.SendByTag(System.String,System.Int32)">
+            <summary>
+            按用户标签群发消息
+            </summary>
+            <param name="Text">要发送的文字消息内容，支持HTML的A标签</param>
+            <param name="TagID">用户标签ID</param>
+            <returns>操作结果 true/false/异常原因</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.MsgMassSender.fullUrl">
+            <summary>
+            完整路径
+            </summary>
+            <value>The full URL.</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.MsgMassSender.NeedAudit">
+            <summary>
+            设定或读取群发消息是否审核
+            </summary>
+            <value>发消息是否审核</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth">
+            <summary>
+            OAuth协议封装
+            <para>使用前请先在生活频道操作平台civetpublic.foxconn.com授权你要网站域名</para>
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.OAuth.url">
+            <summary>
+            用户接口根路径
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.#ctor(System.String)">
+            <summary>
+            OAuth协议封装
+            </summary>
+            <param name="AppId">生活频道的AppId，可从civetpublic.foxconn.com查询</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.AccessToken(System.String)">
+            <summary>
+            Step1.获得Token
+            </summary>
+            <param name="code">跳转的地址中带的code值</param>
+            <returns>用户的Token信息</returns>
+            <exception cref="T:PDSS.CivetPublic.User.CivetException">返回不能反序列化的结果</exception>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.GetUserInfo(PDSS.CivetPublic.User.OAuth.Token)">
+            <summary>
+            Step2.获得用户信息
+            </summary>
+            <param name="token">用户的Token信息</param>
+            <returns>用户基本信息</returns>
+            <exception cref="T:PDSS.CivetPublic.User.CivetException">返回不能反序列化的结果</exception>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.GetFriendsList(PDSS.CivetPublic.User.OAuth.Token)">
+            <summary>
+            获取好友openid列表
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.FastGetUserInfo(System.String)">
+            <summary>
+            快速获得用户基本信息
+            </summary>
+            <param name="code">跳转的地址中带的code值</param>
+            <returns>用户基本信息</returns>
+            <exception cref="T:PDSS.CivetPublic.User.CivetException">返回不能反序列化的结果</exception>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.FastGetUserInfo(System.Web.HttpRequest)">
+            <summary>
+            快速获得用户基本信息
+            </summary>
+            <param name="Request">当前网页的Request对像</param>
+            <returns>用户基本信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.FastGetUserInfo(System.Web.HttpRequestBase)">
+            <summary>
+            快速获得用户基本信息
+            </summary>
+            <param name="Request">当前网页的Request对像</param>
+            <returns>用户基本信息</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.FastGetUserInfo``1(System.String)">
+            <summary>
+            快速获得用户信息，并填充自定义的用户信息类
+            <para>需要特定权限（代码：O）才能使用</para>
+            </summary>
+            <typeparam name="T">自定义的用户信息类，可以添加香信已有的用户资料字段。</typeparam>
+            <param name="code">OAuth跳转时获得的</param>
+            <returns>自定义的用户信息类实例</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.GetPostionInfo(System.String,System.String)">
+            <summary>
+            Step3.获得用户位置信息
+            </summary>
+            <param name="openid">用户OpenID</param>
+            <param name="encryptPostion">跳转的地址中带的Postion值</param>
+            <returns>用户位置信息。null表示获取位置信息失败。</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.GetFaceInfo(System.String,System.String)">
+            <summary>
+            Step4.獲得人臉驗證信息
+            </summary>
+            <param name="openid">用户OpenID</param>
+            <param name="encryptFaceInfo">跳转的地址中带的FaceInfo值</param>
+            <returns>用户位置信息。null表示获取位置信息失败。</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.GetPostionFaceInfo(System.String,System.String,System.String)">
+            <summary>
+            Step3~4.获得用户位置以及人臉驗證信息
+            </summary>
+            <param name="openid">用户OpenID</param>
+            <param name="encryptPostion">跳转的地址中带的Postion值</param>
+            <param name="encryptFaceInfo">跳转的地址中带的FaceInfo值</param>
+            <returns>用户位置信息。null表示获取位置信息失败。</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.GenerateOAuthUrl(System.String,PDSS.CivetPublic.User.OAuth.eScope,System.Boolean)">
+            <summary>
+            生成OAuth链接
+            <para>页面需要跳转至OAuth链接，请用前端javascript方法跳转，建议后台使用CivetHelper.JsRedirect方法生成javascript代码。</para>
+            </summary>
+            <param name="redirect_uri">已授权域名下的网址</param>
+            <param name="scope">获取资料的范围</param>
+            <param name="getlocation">是否获取用户位置</param>
+            <returns>返回OAuth链接</returns>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.eScope">
+            <summary>
+            获取资料的范围
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.OAuth.eScope.snsapi_userinfo">
+            <summary>
+            读取用户资料
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.OAuth.eScope.snsapi_base">
+            <summary>
+            仅读取用户OpenID
+            </summary>
+        </member>
+        <member name="F:PDSS.CivetPublic.User.OAuth.eScope.snsapi_password">
+            <summary>
+            输入密码之后读取用户资料
+            </summary>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.Token">
+            <summary>
+            访问Token
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.Token.openid">
+            <summary>
+            设置或读取用户OpenID
+            </summary>
+            <value>用户OpenID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.Token.access_token">
+            <summary>
+            设置或读取访问用户资料Token
+            </summary>
+            <value>访问用户资料Token</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.Token.is_subscriber">
+            <summary>
+            设置或读取是否本生活频道的订阅者
+            </summary>
+            <value>是否本生活频道的订阅者</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.Token.expires_in">
+            <summary>
+            设置或读取有效时间
+            </summary>
+            <value>有效时间（单位：秒）</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.UserInfo">
+            <summary>
+            香信用户基本信息
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.civetno">
+            <summary>
+            设置或读取用户香信号
+            </summary>
+            <value>用户香信号</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.realname">
+            <summary>
+            设置或读取用户姓名
+            </summary>
+            <value>用户姓名</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.sex">
+            <summary>
+            设置或读取性别
+            </summary>
+            <value>性别</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.nickname">
+            <summary>
+            设置或读取昵称
+            </summary>
+            <value>昵称</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.area">
+            <summary>
+            设置或读取用户所在地区
+            </summary>
+            <value>用户所在地区</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.sign">
+            <summary>
+            设置或读取用户签名
+            </summary>
+            <value>用户签名</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.icon">
+            <summary>
+            设置或读取用户头像
+            </summary>
+            <value>用户头像</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.serviceno">
+            <summary>
+            设置或读取生活频道帐号
+            </summary>
+            <value>生活频道帐号</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.is_subscriber">
+            <summary>
+            设置或读取是否本生活频道的订阅者
+            </summary>
+            <value>是否本生活频道的订阅者</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.support_civet_no">
+            <summary>
+            设置或读取生活频道帐号客服香信号
+            </summary>
+            <value>生活频道帐号客服香信号</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.openid">
+            <summary>
+            设置或读取用户OpenID
+            </summary>
+            <value>用户OpenID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.access_token">
+            <summary>
+            设置或读取访问用户资料Token
+            </summary>
+            <value>访问用户资料Token</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.expires_in">
+            <summary>
+            设置或读取有效时间
+            </summary>
+            <value>有效时间（单位：秒）</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.hrtype">
+            <summary>
+            hrtype，可通过此字段判断是否为台干或其他身份等
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.unit">
+            <summary>
+            设置或读取用户次集团
+            </summary>
+            <value>用户次集团</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.bg">
+            <summary>
+            设置或读取用户BG
+            </summary>
+            <value>用户BG</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.bu">
+            <summary>
+            设置或读取用户BU
+            </summary>
+            <value>用户BU</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.grade">
+            <summary>
+            设置或读取用户职系
+            </summary>
+            <value>用户职系</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfo.grade_depart">
+            <summary>
+            设置或读取用户所在技委会
+            </summary>
+            <value>所在技委会</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.UserInfoExt">
+            <summary>
+            香信用户扩展信息
+            </summary>
+            <seealso cref="T:PDSS.CivetPublic.User.OAuth.UserInfo"/>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.company">
+            <summary>
+            设置或读取法人
+            </summary>
+            <value>法人</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.cost_code">
+            <summary>
+            设置或读取费用代码
+            </summary>
+            <value>费用代码</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.birthday">
+            <summary>
+            设置或读取生日
+            </summary>
+            <value>生日</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.edu_degree">
+            <summary>
+            设置或读取学历
+            </summary>
+            <value>学历</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.class">
+            <summary>
+            设置或读取资位
+            </summary>
+            <value>资位</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.job_title">
+            <summary>
+            设置或读取职位
+            </summary>
+            <value>职位</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.job_status">
+            <summary>
+            设置或读取在职状态
+            </summary>
+            <value>在职状态</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.hiredate">
+            <summary>
+            设置或读取入职日期
+            </summary>
+            <value>入职日期</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.leavedate">
+            <summary>
+            设置或读取离职日期
+            </summary>
+            <value>离职日期</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.civetid">
+            <summary>
+            设置或读取香信ID
+            </summary>
+            <value>香信ID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.mobile">
+            <summary>
+            设置或读取手机
+            </summary>
+            <value>手机</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.UserInfoExt.email">
+            <summary>
+            设置或读取邮箱
+            </summary>
+            <value>邮箱</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.PostionInfo">
+            <summary>
+            位置信息
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.PostionInfo.GetDistance(PDSS.CivetPublic.User.OAuth.PostionInfo)">
+            <summary>
+            到某一目标位置的距离(单位：千米)
+            </summary>
+            <param name="ToPostion">目标位置</param>
+            <returns>距离值</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.OAuth.PostionInfo.GetPlaceNameByGoogle">
+            <summary>
+            通过谷歌获取地名
+            <para>需要服务器端网络支持</para>
+            </summary>
+            <returns>地名</returns>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionInfo.pos_info">
+            <summary>
+            獲得位置信息字符串
+            </summary>
+            <value>位置信息字符串</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionInfo.Latitude">
+            <summary>
+            设置或读取纬度
+            </summary>
+            <value>纬度</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionInfo.Longitude">
+            <summary>
+            设置或读取经度
+            </summary>
+            <value>经度</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionInfo.LHFactory">
+            <summary>
+            获得龙华园区风水喷泉参考位置
+            </summary>
+            <value>龙华园区风水喷泉参考位置</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionInfo.TWUniversity">
+            <summary>
+            获得台湾大学参考位置
+            </summary>
+            <value>台湾大学参考位置</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.FaceInfo">
+            <summary>
+            人臉驗證信息
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.FaceInfo.face_result">
+            <summary>
+            獲得人臉驗證結果
+            </summary>
+            <value>人臉驗證結果</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.FaceInfo.face_img_id">
+            <summary>
+            獲得人臉驗證時圖片ID
+            </summary>
+            <value>人臉驗證時圖片ID</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.FaceInfo.face_img_url">
+            <summary>
+            獲得人臉驗證時圖片URL
+            </summary>
+            <value>人臉驗證時圖片URL</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.OAuth.PostionFaceInfo">
+            <summary>
+            位置及人臉驗證信息
+            </summary>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionFaceInfo.position">
+            <summary>
+            位置信息
+            </summary>
+            <value>位置信息</value>
+        </member>
+        <member name="P:PDSS.CivetPublic.User.OAuth.PostionFaceInfo.face">
+            <summary>
+            人臉驗證信息
+            </summary>
+            <value>人臉驗證信息</value>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.ProxyForCivetAPI">
+            <summary>
+            设定访问的代理
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.ProxyForCivetAPI.Set(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            设置访问服务器代理
+            </summary>
+            <param name="Host">代理服务器地址</param>
+            <param name="Port">端口</param>
+            <param name="Username">帐号</param>
+            <param name="Password">密码</param>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.ProxyForCivetAPI.Clear">
+            <summary>
+            清空代理服务器
+            </summary>
+        </member>
+        <member name="T:PDSS.CivetPublic.User.Util">
+            <summary>
+            Class Util.
+            </summary>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Util.GetResponseData(System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the response data.
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="method">The method.</param>
+            <param name="request_data">The request data.</param>
+            <param name="contentType">Type of the content.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Util.XmlSerializer(System.Type,System.Object,System.Boolean)">
+            <summary>
+            序列化XML文件
+            </summary>
+            <param name="type">類型</param>
+            <param name="obj">對象</param>
+            <param name="clear">清除多餘申明</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Util.XmlDeserialize(System.Type,System.String)">
+            <summary>
+            反序列化XML
+            </summary>
+            <param name="type">類型</param>
+            <param name="xml">XML字符串</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Util.CDate(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            转化成时间
+            </summary>
+            <param name="str">时间字符串</param>
+            <param name="DefaultTime">默认时间</param>
+            <returns>时间</returns>
+        </member>
+        <member name="M:PDSS.CivetPublic.User.Util.FormatTime(System.Nullable{System.DateTime},System.String)">
+            <summary>
+            转优成时间格式
+            </summary>
+            <param name="Time"></param>
+            <param name="FormatStr">默认为：yyyy-MM-dd HH:mm</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

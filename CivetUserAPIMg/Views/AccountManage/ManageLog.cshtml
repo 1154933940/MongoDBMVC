@@ -1,0 +1,80 @@
+﻿@model PagedList<ModUApiManagerLogFind>
+@using CivetHR.UserAPI
+@using Webdiyer.WebControls.Mvc
+@using CivetUserAPIMg.Models
+@using PDSS.MVC.Utility
+@{
+    ViewBag.headIndex = "hi_5";
+}
+
+<div style="line-height: 50px; height: 50px; padding: 0px 20px; font-size: 20px; font-family: SimHei; border-bottom: 1px solid #DEDFDE;">
+    <div style="font-size: 20px;">
+          <h3>管理员登录日志</h3>
+    </div>
+</div>
+<div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center">
+        @using (Html.BeginForm("ManageLog", "AccountManage", FormMethod.Get))
+        { 
+            <label>
+                香信号:<input type="text" name="civetno" value="@ViewBag.SearchCondtion.civetno" />
+                <input type="submit" class="btn-s" style="overflow: visible;" value="搜索">
+            </label>
+        }
+    </div>
+    <table border="1" class="normal_table" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr class="normal_head">
+                <th>香信号</th>
+                <th>登录IP</th>
+                <th>最后登录日期</th>
+            </tr>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.civet_no</td>
+                    <td>@item.login_ip</td>
+                    <td>@Util.FormatTime(item.login_time)</td>
+                </tr>      
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <div class="pagescount">
+        <div class="pagelength">頁碼 @Model.CurrentPageIndex/@Model.TotalPageCount  記錄數 @Model.TotalItemCount</div>
+        <div class="pageindex">
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", ShowPageIndexBox = true, PageIndexBoxType = PageIndexBoxType.DropDownList, ShowGoButton = false })
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .pagescount {
+        width: 95%;
+        height: 60px;
+        padding: 0px 20px;
+    }
+
+    .pagelength {
+        width: 20%;
+        float: left;
+        height: 50%;
+        line-height: 30px;
+    }
+
+    .pageindex {
+        float: right;
+    }
+</style>
+@section Page_End_Scripts{
+    @{Html.RegisterMvcPagerScriptResource();}
+}
+<script type="text/javascript">
+
+</script>

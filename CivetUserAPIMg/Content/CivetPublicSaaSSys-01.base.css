@@ -1,0 +1,178 @@
+﻿page, body, p, table, td, th, div, span, tt, a {
+    font-family: 'civetapps', SimSun, 'Times New Roman';
+    font-size: 12px;
+    margin: 0px;
+}
+input, textarea {
+    font-family: SimSun, 'Times New Roman';
+    font-size: 13px;
+    height:20px;
+    line-height:20px;
+}
+input[type="radio"], input[type="checkbox"] {
+    vertical-align: middle;
+}
+@font-face {
+    font-family: "civetapps";
+    src: url(src/fonts/civetapps.eot?v=1.5&t3);
+    src: url(src/fonts/civetapps.eot?v=1.5&t3#iefix) format("embedded-opentype"), url(src/fonts/civetapps.woff?v=1.5&t3) format("woff"), url(src/fonts/civetapps.ttf?v=1.5&t3) format("truetype"), url(src/fonts/civetapps.svg?v=1.5&t3#Ionicons) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+img {
+    max-width: 100%;
+}
+img.gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+/*各种按钮 **开始************************************************************************************/
+.btn,.btn-u, .btn-s, .btn-m, .btn-l, .btn-a
+{
+	font-size: 13px;
+	line-height: 32px;
+	color: #FFFFFF;
+	background: #5982C2;
+	border-radius: 3px;	
+	box-shadow: #666;
+	text-align: center;
+	margin: 0px auto;
+	text-decoration: none;
+	border: 0px;
+	cursor: default;    
+    padding: 0px  15px;
+}
+a.btn, a.btn-u, a.btn-s, a.btn-m, a.btn-l, a.btn-a {
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.btn:link,.btn-u:link, .btn-s:link, .btn-m:link, .btn-l:link, .btn-a:link,
+.btn:visited, .btn-u:visited, .btn-s:visited, .btn-m:visited, .btn-l:visited, .btn-a:visited {    
+	color: #FFFFFF;
+}
+.btn:hover,.btn-u:hover, .btn-s:hover, .btn-m:hover, .btn-l:hover, .btn-a:hover {
+    background: #91ACD7;
+    color: #ddd;
+}
+.btn {
+    min-width: 100px;
+    height: 32px;
+}
+.btn-u {
+   padding:0px 30px;
+   height:32px;
+   width:auto;overflow:visible;/*2015-12-14添加*/
+}
+.btn-a {
+    height: 32px;
+}
+.btn-s {
+    min-width: 40px;
+    height: 26px;
+    line-height: 25px;
+    width:auto;overflow:visible;
+}
+.btn-m {
+    min-width: 60px;
+    height: 30px;
+}
+.btn-l {
+    min-width: 100px;
+    height: 36px;
+}
+
+a.i-btn, a.i-btn:link, a.i-btn:visited {
+    font-size: 14px;
+    color: #9C9C9C;
+}
+a.i-btn:hover {
+    color: #000000;
+}
+.btn-mobile, a.btn-mobile:link, a.btn-mobile:visited {
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+}
+/**按钮居右**/
+.to_right, a.to_right {
+	-color: #FFFFFF;
+    float: right;
+}
+a.to_right, a.to_right:visited, a.to_right:link {
+	-color: #FFFFFF;
+}
+/*各种颜色的按钮*/
+.b_orange {
+    background: #FF6600;
+}
+.btn-consel{
+    background:#bdc3c7;
+}
+.btn-gray, .btn-gray:hover, .btn-gray:visited{
+    background:gray;
+}
+/**添加表情**/
+.addemotion {
+    float: left;
+    font-size: 29px;
+    color: #CECFCE;
+    cursor: pointer;
+}
+/***弹出层提示***/
+#ResultMsgDiv {
+    width: auto !important;
+    width: 600px;
+    height: auto !important;
+    height: 25px;
+    line-height: 25px;
+    min-width: 600px;
+    min-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+}
+/**各种按钮　结束************************************************************************************/
+/***文本框 开始***/
+.u-ipt {
+    border: #ddd 1px solid;
+    width: 248px;
+    display: inline-block;
+    background: #fff;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+    color: #666;
+}
+texteara .u-ipt {
+    height: 60px;
+}
+.u-mtxt{
+    box-sizing: border-box;
+    padding:5px 2% 5px 2%;
+    line-height: 18px;
+    border: 0px; 
+    overflow-y: auto; 
+    width: 100%; 
+    background: #fff; 
+    height: 210px; 
+    color: #666;
+}
+/**文本框　结束************************************************************************************/
+.u-gotop{ position:fixed; bottom:10px; right:10px;width:46px;height:40px; text-align:center; vertical-align:middle; line-height:40px;
+         font-size:13px; font-weight:bold; overflow:hidden;border:1px solid #ddd;
+         border-radius:8px;cursor:pointer;background-color:#ffa;}
+.u-gotop:hover {color:#458cde; }
+.u-gotop-show{display:block;-webkit-animation:gotopshow 0.5s;-moz-animation:gotopshow 0.5s;
+              -ms-animation:gotopshow 0.5s;-o-animation:gotopshow 0.5s;animation:gotopshow 0.5s;}
+.u-gotop-open{ right:70px;width:76px;}
+
+/*下拉菜單**/
+select {
+    max-width: 220px;
+    font-size: 14px;
+    padding: 3px;
+}

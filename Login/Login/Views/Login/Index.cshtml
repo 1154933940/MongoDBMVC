@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div style="width:500px;height:300px;margin:auto;margin-top:10% ">
+            <div>
+                <label>账号</label>   <input type="text" value="admin" name="name" />
+            </div>
+            <div>
+                <label>密码</label>   <input type="password" value="admin" name="pas" />
+            </div>
+
+            <div>
+                <input type="submit" value="登录" />
+            </div>
+        </div>
+    }
+</body>
+</html>
